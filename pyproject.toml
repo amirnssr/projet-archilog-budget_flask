@@ -1,0 +1,15 @@
+[project]
+name = "archilogtp"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "amirnssr", email = "amirnassiri4@gmail.com"},
+]
+dependencies = ["flask-wtf>=1.2.2", "flask>=3.1.0", "sqlalchemy>=2.0.39", "click>=8.1.8"]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false

@@ -2,12 +2,14 @@ import uuid
 from dataclasses import dataclass
 from sqlalchemy import create_engine, Column, String, Float, MetaData, Table, insert, update, delete
 
+from archilog import config
+
 
 # Creation de la base de donnees
 engine = create_engine("sqlite:///data.db", echo=True)
 metadata = MetaData()
 
-
+engine=create_engine(config.DATABASE_URL,echo=config.DEBUG)
 
 # Definition de la table
 profile_table = Table(

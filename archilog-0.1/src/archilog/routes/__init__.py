@@ -9,17 +9,9 @@ def create_app():
     """Factory pour créer l'application Flask."""
     app = Flask(__name__)
 
-    # Configuration centralisée
-    app.config.from_prefixed_env(prefix="ARCHILOG_FLASK")
-
     # Importer et enregistrer les Blueprints
-    from .routes.main import main_bp
-    from .routes.web_ui import web_ui
-    app.register_blueprint(main_bp)
-    app.register_blueprint(web_ui)
+    from archilog.routes.web_ui import web_ui_bp
 
-    # Gestion des erreurs
-    from .errors.handlers import register_error_handlers
-    register_error_handlers(app)
+    app.register_blueprint(web_ui_bp, url_prefix="/ui")  # Ajout d'un prefixe
 
     return app
