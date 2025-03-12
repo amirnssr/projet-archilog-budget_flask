@@ -1,20 +1,29 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Importer un fichier CSV</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Importer un fichier CSV</h1>
-    <form action="{{ url_for web_ui.import_csv) }}" method="POST" enctype="multipart/form-data">
-        <label for="file">Sélectionnez un fichier CSV :</label>
-        <input type="file" name="file" id="file" accept=".csv" required>
-        <br><br>
-        <button type="submit">Importer</button>
-    </form>
-    <a href="{{ url_for('index') }}">
-        <button>Retour à l'accueil</button>
-    </a>
-</body>
-</html>
+{% extends "index.html" %}
+
+{% block title %}Importer un fichier CSV{% endblock %}
+
+{% block content %}
+<h2>Importer un fichier CSV</h2>
+
+<form method="POST" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}  <!-- Protection CSRF -->
+
+    <div>
+        <label for="file">{{ form.file.label }}</label>
+        {{ form.file(class="form-control", id="file") }}
+        {% for error in form.file.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+</form>
+
+<br>
+
+<!-- Bouton pour revenir à l'index -->
+<a href="{{ url_for('index') }}">Retour à l'accueil</a>
+
+{% endblock %}

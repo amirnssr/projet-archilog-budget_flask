@@ -3,6 +3,11 @@ import click
 from flask import Flask, Response, render_template, request, redirect, url_for
 import archilog.models as models
 import archilog.services as services
+from flask_wtf import FlaskForm
+from wtforms import StringField, FloatField, SubmitField
+from wtforms.validators import DataRequired, Length, NumberRange, Optional
+from archilog.forms import *  
+
 
 app = Flask(__name__)
 
@@ -15,12 +20,14 @@ with app.app_context():
 
 @app.route("/")
 def index():
+    
     return render_template("index.html")
 
 
 @app.route("/home")
 def home():
-    return render_template("home.html")
+    form = EntryForm()
+    return render_template("home.html", form=form)
 
 @app.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
@@ -39,6 +46,7 @@ def add_entry():
 
 @app.route("/delete", methods=["GET", "POST"])
 def delete():
+    form=DeleteForm()
     if request.method == "POST":
         entry_id = request.form.get("entry_id")
         if entry_id:
@@ -50,11 +58,12 @@ def delete():
                 return f"Erreur : {str(e)}", 400
         return redirect(url_for("index"))
 
-    return render_template("delete.html")
+    return render_template("delete.html", form=form)
 
 
 @app.route("/update", methods=["GET", "POST"])
 def update():
+    form=UpdateForm()
     if request.method == "POST":
         entry_id = request.form.get("entry_id")
         name = request.form.get("name")
@@ -77,7 +86,7 @@ def update():
                 click.echo(f"Erreur lors de la mise a jour : {str(e)}")
                 return f"Erreur : {str(e)}", 400
 
-    return render_template("update.html")
+    return render_template("update.html", form=form)
 
 
 @app.route("/export_csv")
@@ -97,6 +106,7 @@ def export_csv():
 
 @app.route("/import_csv", methods=["GET", "POST"])
 def import_csv():
+    form=ImportCSVForm()
     message = None  # Variable pour stocker le message de retour
 
     if request.method == "POST":
@@ -120,7 +130,7 @@ def import_csv():
                     message = f"Erreur lors de l'importation : {str(e)}"
                     click.echo(message)
 
-    return render_template("import_csv.html", message=message)
+    return render_template("import_csv.html", message=message, form=form)
 
 
 if __name__ == "__main__":

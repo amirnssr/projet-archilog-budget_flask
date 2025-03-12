@@ -1,33 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Page d'accueil</title>
+    <title>{% block title %}Page d'accueil{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Bienvenue sur l'accueil</h1>
 
-    <form action="{{ url_for('home') }}">
-        <button type="submit">Entrée une valeur</button>
-    </form>
+    <header>
+        <h1>Bienvenue sur l'application</h1>
+    </header>
 
-    <form action="{{ url_for('delete') }}">
-        <button type="submit">Supprimer une entrée</button>
-    </form>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Accueil</a></li>
+            <li><a href="{{ url_for('home') }}">Ajouter une entrée</a></li>
+            <li><a href="{{ url_for('delete') }}">Supprimer une entrée</a></li>
+            <li><a href="{{ url_for('update') }}">Mettre à jour une entrée</a></li>
+            <li><a href="{{ url_for('import_csv') }}">Importer CSV</a></li>
+            <li><a href="{{ url_for('export_csv') }}">Exporter CSV</a></li>
+        </ul>
+    </nav>
 
-    <form action="{{ url_for('update') }}">
-        <button type="submit">Mettre à jour un utilisateur</button>
-    </form>
-
-    <form action="{{ url_for('import_csv') }}">
-        <button type="submit">Importer un fichier CSV</button>
-    </form>
-
-    <form action="{{ url_for('export_csv') }}">
-        <button type="submit">Exporter les données en CSV</button>
-    </form>
-    
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
 </body>
 </html>

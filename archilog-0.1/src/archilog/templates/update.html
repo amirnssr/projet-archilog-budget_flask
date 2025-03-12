@@ -1,26 +1,59 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Mettre à jour un utilisateur</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-    <h1>Mettre à jour une entrée</h1>
-    <form method="POST" action="{{ url_for.update) }}">
-        <label for="entry_id">ID de l'utilisateur :</label>
-        <input type="text" id="entry_id" name="entry_id" required><br><br>
-        <label for="name">Nouveau nom :</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="amount">Nouveau montant :</label>
-        <input type="number" id="amount" name="amount" step="0.01"><br><br>
-        <label for="category">Nouvelle catégorie :</label>
-        <input type="text" id="category" name="category"><br><br>
-        <button type="submit">Mettre à jour</button>
-    </form>
+{% extends "index.html" %}
+
+{% block title %}Mettre à jour une entrée{% endblock %}
+
+{% block content %}
+<h2>Mettre à jour une entrée</h2>
+
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- Protection CSRF -->
+
+    <div>
+        <label for="entry_id">{{ form.entry_id.label }}</label>
+        {{ form.entry_id(class="form-control", id="entry_id") }}
+        {% for error in form.entry_id.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
     <br>
-    <a href="{{ url_for('index') }}">
-        <button>Retour à l'accueil</button>
-    </a>
-</body>
-</html>
+
+    <div>
+        <label for="name">{{ form.name.label }}</label>
+        {{ form.name(class="form-control", id="name") }}
+        {% for error in form.name.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div>
+        <label for="amount">{{ form.amount.label }}</label>
+        {{ form.amount(class="form-control", id="amount", step="0.01") }}
+        {% for error in form.amount.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div>
+        <label for="category">{{ form.category.label }}</label>
+        {{ form.category(class="form-control", id="category") }}
+        {% for error in form.category.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-success">{{ form.submit.label }}</button>
+</form>
+
+<br>
+
+<!-- Bouton pour revenir à l'index -->
+<a href="{{ url_for('index') }}">Retour à l'accueil</a>
+
+{% endblock %}

@@ -1,32 +1,49 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Ajouter un utilisateur</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "index.html" %}
 
-    <h1>Ajouter une entrée</h1>
-    <form method="POST" action="{{ url_for.add_entry) }}">
+{% block title %}Ajouter une entrée{% endblock %}
 
-        <label for="name">Nom:</label>
-        <input type="text" id="name" name="name" required><br><br>
+{% block content %}
+<h2>Ajouter une entrée</h2>
 
-        <label for="amount">Montant:</label>
-        <input type="number" id="amount" name="amount" step="0.01" required><br><br>
+<form method="POST">
+    {{ form.hidden_tag() }}  <!-- Protection CSRF -->
 
-        <label for="category">Catégorie:</label>
-        <input type="text" id="category" name="category"><br><br>
+    <div>
+        <label for="name">{{ form.name.label }}</label>
+        {{ form.name(class="form-control", id="name") }}
+        {% for error in form.name.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
 
-        <input type="submit" value="Ajouter">
-    </form>
-
-    <!-- Bouton pour revenir à l'index -->
     <br>
-    <a href="{{ url_for('index') }}">
-        <button>Retour à l'accueil</button>
-    </a>
 
-</body>
-</html>
+    <div>
+        <label for="amount">{{ form.amount.label }}</label>
+        {{ form.amount(class="form-control", id="amount") }}
+        {% for error in form.amount.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <div>
+        <label for="category">{{ form.category.label }}</label>
+        {{ form.category(class="form-control", id="category") }}
+        {% for error in form.category.errors %}
+            <small class="text-danger">{{ error }}</small>
+        {% endfor %}
+    </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+</form>
+
+<br>
+
+<!-- Bouton pour revenir à l'index -->
+<a href="{{ url_for('index') }}">Retour à l'accueil</a>
+
+{% endblock %}
