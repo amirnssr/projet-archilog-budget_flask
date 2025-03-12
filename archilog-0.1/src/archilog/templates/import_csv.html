@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Importer un fichier CSV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Importer un fichier CSV</h1>
+    <form action="{{ url_for('import_csv') }}" method="POST" enctype="multipart/form-data">
+        <label for="file">Sélectionnez un fichier CSV :</label>
+        <input type="file" name="file" id="file" accept=".csv" required>
+        <br><br>
+        <button type="submit">Importer</button>
+    </form>
+    <a href="{{ url_for('index') }}">
+        <button>Retour à l'accueil</button>
+    </a>
+</body>
+</html>

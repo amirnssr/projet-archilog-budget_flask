@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bienvenue sur l'accueil</h1>
+
+    <form action="{{ url_for('home') }}">
+        <button type="submit">Entrée une valeur</button>
+    </form>
+
+    <form action="{{ url_for('delete') }}">
+        <button type="submit">Supprimer une entrée</button>
+    </form>
+
+    <form action="{{ url_for('update') }}">
+        <button type="submit">Mettre à jour un utilisateur</button>
+    </form>
+
+    <form action="{{ url_for('import_csv') }}">
+        <button type="submit">Importer un fichier CSV</button>
+    </form>
+
+    <form action="{{ url_for('export_csv') }}">
+        <button type="submit">Exporter les données en CSV</button>
+    </form>
+    
+
+</body>
+</html>
