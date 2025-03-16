@@ -7,6 +7,8 @@ from archilog import config
 load_dotenv()
 
 def create_app():
+    app.config["WTF_CSRF_ENABLED"] = False
+
     """Factory pour créer l'application Flask."""
     app = Flask(__name__)
 

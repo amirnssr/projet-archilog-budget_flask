@@ -1,0 +1,12 @@
+2025-03-16 18:21:30,096 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-16 18:21:30,096 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-16 18:21:30,096 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-16 18:22:13,790 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-16 18:22:13,790 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-16 18:22:13,790 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-16 18:27:49,002 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-16 18:27:49,002 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-16 18:27:49,002 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-16 18:28:00,283 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-16 18:28:00,284 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-16 18:28:00,284 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')

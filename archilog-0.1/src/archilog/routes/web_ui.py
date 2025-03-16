@@ -4,7 +4,10 @@ from flask import Blueprint, render_template, request, redirect, url_for, Respon
 import archilog.models as models
 import archilog.services as services
 from archilog.forms import EntryForm, DeleteForm, UpdateForm, ImportCSVForm
-
+from .. import config
+from .. import models
+from archilog.config import db
+from archilog.models import User 
 
 web_ui_bp = Blueprint("web_ui", __name__, template_folder="../../templates")
 
@@ -14,19 +17,29 @@ web_ui_bp = Blueprint("web_ui", __name__, template_folder="../../templates")
 def index():
     return render_template("index.html")
 
-@web_ui_bp.route("/home", methods=["GET", "POST"])
-def home():
-    form = EntryForm()
-    if form.validate_on_submit():
-        name = form.name.data
-        amount = form.amount.data
-        category = form.category.data if form.category.data else None  # Si vide, mettre None
 
-        models.create_entry(name, amount, category)
-        flash("Entrée ajoutée avec succès !", "success")
-        return redirect(url_for("index.html"))
 
-    return render_template("home.html", form=form)
+@web_ui_bp.route("/add_entry", methods=["GET", "POST"])
+def add_entry():
+    if request.method == "POST":
+        name = request.form.get("name")
+        amount = request.form.get("amount")
+        category = request.form.get("category")
+
+        if name and amount:
+            try:
+                amount = float(amount)  
+                new_entry = User(nom=name) 
+                db.session.add(new_entry)
+                db.session.commit()
+              
+            except ValueError:
+               
+                return redirect(url_for("add_entry"))
+
+        return redirect(url_for("home"))  
+
+    return render_template("home.html")  
 
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
 def delete():

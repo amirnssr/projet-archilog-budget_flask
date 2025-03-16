@@ -13,7 +13,7 @@ $ python -m pdm run archilog init-db
 $ python -m pdm add sqlalchemy
 $ python -m pdm add flask (a la racine archilog-0.1)
 $ python -m pdm add flask sqlalchemy click 
-$ python -m pdm run flask --app archilog.views routes
+$ python -m pdm run flask --app archilog.routes routes
 $ python -m pdm run archilog create --name "Alice" --amount 200 --category "Finance"
 $ python -m pdm build
 $ python -m pdm run start
