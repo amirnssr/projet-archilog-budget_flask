@@ -13,12 +13,13 @@
 
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">Accueil</a></li>
-            <li><a href="{{ url_for('home') }}">Ajouter une entrée</a></li>
-            <li><a href="{{ url_for('delete') }}">Supprimer une entrée</a></li>
-            <li><a href="{{ url_for('update') }}">Mettre à jour une entrée</a></li>
-            <li><a href="{{ url_for('import_csv') }}">Importer CSV</a></li>
-            <li><a href="{{ url_for('export_csv') }}">Exporter CSV</a></li>
+            <li><a href="{{ url_for('web_ui.index') }}">Accueil</a></li>
+            <li><a href="{{ url_for('web_ui.add_entry') }}">Ajouter une entrée</a></li>
+
+            <li><a href="{{ url_for('web_ui.delete') }}">Supprimer une entrée</a></li>
+            <li><a href="{{ url_for('web_ui.update') }}">Mettre à jour une entrée</a></li>
+            <li><a href="{{ url_for('web_ui.import_csv') }}">Importer CSV</a></li>
+            <li><a href="{{ url_for('web_ui.export_csv') }}">Exporter CSV</a></li>
         </ul>
     </nav>
 

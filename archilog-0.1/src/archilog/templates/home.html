@@ -3,8 +3,10 @@
 {% block title %}Ajouter une entrée{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <h2>Ajouter une entrée</h2>
-<form method="POST" action="{{ url_for('add_entry') }}">
+<form method="POST" action="{{ url_for('web_ui.add_entry') }}">
     <label for="name">Nom :</label>
     <input type="text" name="name" required>
 
@@ -21,5 +23,5 @@
 <br>
 
 <!-- Bouton pour revenir à l'index -->
-<a href="{{ url_for('index') }}">Retour à l'accueil</a>  
+<a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>  
 {% endblock %}

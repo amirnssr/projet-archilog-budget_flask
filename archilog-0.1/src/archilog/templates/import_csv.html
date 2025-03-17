@@ -3,6 +3,8 @@
 {% block title %}Importer un fichier CSV{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <h2>Importer un fichier CSV</h2>
 
 <form method="POST" enctype="multipart/form-data">
@@ -24,6 +26,6 @@
 <br>
 
 <!-- Bouton pour revenir à l'index -->
-<a href="{{ url_for('index') }}">Retour à l'accueil</a>
+<a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>
 
 {% endblock %}

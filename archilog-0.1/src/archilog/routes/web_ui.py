@@ -5,10 +5,9 @@ import archilog.models as models
 import archilog.services as services
 from archilog.forms import EntryForm, DeleteForm, UpdateForm, ImportCSVForm
 from .. import config
-from .. import models
+from archilog.models import Entry, db  # Correctement importé
 
-
-web_ui_bp = Blueprint("web_ui", __name__, template_folder="../../templates")
+web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
 
 ### ROUTES FLASK ###
 
@@ -17,9 +16,9 @@ def index():
     return render_template("index.html")
 
 
-
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
+    
     if request.method == "POST":
         name = request.form.get("name")
         amount = request.form.get("amount")
@@ -27,18 +26,19 @@ def add_entry():
 
         if name and amount:
             try:
-                amount = float(amount)  
-                new_entry = User(nom=name) 
+                amount = float(amount)
+                new_entry = Entry(name=name, amount=amount, category=category)  # Création d'une nouvelle entrée
                 db.session.add(new_entry)
                 db.session.commit()
-              
+                flash("Entrée ajoutée avec succès !", "success")
             except ValueError:
-               
-                return redirect(url_for("add_entry"))
+                flash("Erreur : Valeur du montant invalide", "danger")
+                return redirect(url_for("web_ui.add_entry"))
 
-        return redirect(url_for("home"))  
+        return redirect(url_for("web_ui.index"))  # Redirection vers l'index après ajout
 
-    return render_template("home.html")  
+    return render_template("home.html")
+
 
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
 def delete():
@@ -53,6 +53,7 @@ def delete():
         return redirect(url_for("index.html"))
 
     return render_template("delete.html", form=form)
+
 
 @web_ui_bp.route("/update", methods=["GET", "POST"])
 def update():
@@ -77,6 +78,7 @@ def update():
 
     return render_template("update.html", form=form)
 
+
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
 def import_csv():
     form = ImportCSVForm()
@@ -96,3 +98,16 @@ def import_csv():
                 flash(f"Erreur lors de l'importation : {str(e)}", "danger")
 
     return render_template("import_csv.html", form=form)
+
+
+@web_ui_bp.route("/export_csv")
+def export_csv():
+    try:
+        csv_output = services.export_to_csv()
+        return Response(
+            csv_output.getvalue(),
+            mimetype="text/csv",
+            headers={"Content-Disposition": "attachment; filename=exported_data.csv"}
+        )
+    except Exception as e:
+        return f"Erreur lors de l'exportation : {str(e)}", 500

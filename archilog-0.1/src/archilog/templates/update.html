@@ -3,6 +3,8 @@
 {% block title %}Mettre à jour une entrée{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 <h2>Mettre à jour une entrée</h2>
 
 <form method="POST">
@@ -54,6 +56,6 @@
 <br>
 
 <!-- Bouton pour revenir à l'index -->
-<a href="{{ url_for('index') }}">Retour à l'accueil</a>
+<a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>
 
 {% endblock %}

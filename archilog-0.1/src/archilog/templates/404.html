@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page non trouvée</title>
+
+    <!-- Intégration du CSS directement dans le fichier HTML -->
+    <style>
+        /* Style général pour la page 404 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Conteneur principal */
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Titre de la page */
+        h1 {
+            font-size: 3rem;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        /* Message d'erreur */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Lien de retour à l'accueil */
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Style pour les petits écrans */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p, a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 - Page non trouvée</h1>
+        <p>La page que vous recherchez n'existe pas.</p>
+        <a href="/">Retour à l'accueil</a>
+    </div>
+</body>
+</html>

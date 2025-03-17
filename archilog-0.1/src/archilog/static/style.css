@@ -1,141 +1,85 @@
-
+/* Style général pour la page */
 body {
-    font-family: "Poppins", sans-serif;
-    background: #f0f4f8;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
-
+/* Conteneur principal */
 .container {
-    width: 90%;
-    max-width: 800px;
-    background: white;
-    padding: 30px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-h1 {
-    font-size: 2.2em;
-    color: #2c3e50;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* Titre de la page */
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 1.8em;
-    color: #34495e;
-    font-weight: 600;
-    margin-bottom: 15px;
+/* Formulaire */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
-    font-size: 1.4em;
-    color: #5d6d7e;
-    font-weight: 500;
-    margin-bottom: 10px;
+/* Étiquettes de formulaire */
+label {
+    font-weight: bold;
+    color: #555;
 }
 
-
-button, input[type="submit"] {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    font-size: 1em;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s ease-in-out;
-    margin-top: 10px;
-}
-
-button:hover, input[type="submit"]:hover {
-    background: linear-gradient(135deg, #2980b9, #1c6693);
-    transform: scale(1.05);
-}
-
-
-input[type="text"],
-input[type="number"],
-input[type="file"],
-select {
+/* Entrée de texte (champ ID) */
+input.form-control {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
+    margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border 0.3s ease-in-out;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-input:focus {
-    border: 2px solid #3498db;
+input.form-control:focus {
+    border-color: #007bff;
     outline: none;
 }
 
-
-form {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-    width: 100%;
-    max-width: 400px;
-    text-align: left;
+/* Message d'erreur pour les champs invalides */
+small.text-danger {
+    color: red;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
 }
 
+/* Boutons */
+button.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
 
+button.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Lien vers l'accueil */
 a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #e74c3c;
-    font-size: 1em;
-    font-weight: bold;
+    color: #007bff;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    font-size: 1rem;
 }
 
 a:hover {
-    color: #c0392b;
     text-decoration: underline;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 15px 0;
-    text-align: center;
-}
-
-
-@media (max-width: 768px) {
-    .container {
-        width: 95%;
-        padding: 20px;
-    }
-
-    form {
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 1.8em;
-    }
-
-    button {
-        width: 100%;
-    }
 }

@@ -9,6 +9,7 @@ dependencies = [
     "flask>=3.1.0",
     "python-dotenv>=1.0.1",
     "flask-wtf>=1.2.2",
+    "wtf>=0.1",
 ]
 requires-python = ">=3.10"
 
@@ -26,4 +27,4 @@ build-backend = "pdm.backend"
 
 [tool.pdm.scripts]
 _.env_file = "dev.env"
-start = "flask --app archilog.views --debug run"
+start = "flask --app archilog.routes --debug run"
