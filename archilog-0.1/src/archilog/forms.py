@@ -1,6 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField, FileField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
+from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField
+from flask_wtf.file import FileRequired, FileAllowed
 
 class EntryForm(FlaskForm):
     class Meta:
@@ -29,8 +32,5 @@ class UpdateForm(FlaskForm):
     submit = SubmitField("Mettre à jour")
 
 class ImportCSVForm(FlaskForm):
-    class Meta:
-        csrf = False 
-
-    file = FileField("Sélectionnez un fichier CSV", validators=[DataRequired()])
-    submit = SubmitField("Importer")
+    file = FileField('Import CSV', validators=[FileRequired(), FileAllowed(['csv'], 'CSV files only!')])
+    submit = SubmitField('Importer')

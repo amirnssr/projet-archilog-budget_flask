@@ -5,7 +5,10 @@ import archilog.models as models
 import archilog.services as services
 from archilog.forms import EntryForm, DeleteForm, UpdateForm, ImportCSVForm
 from .. import config
-from archilog.models import Entry, db  # Correctement importé
+from archilog.models import Entry, db  
+import csv
+from io import StringIO
+from archilog.services import import_from_csv
 
 web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
 
@@ -50,7 +53,7 @@ def delete():
             flash("Entrée supprimée avec succès !", "success")
         except Exception as e:
             flash(f"Erreur lors de la suppression : {str(e)}", "danger")
-        return redirect(url_for("index.html"))
+        return redirect(url_for("web_ui.index"))
 
     return render_template("delete.html", form=form)
 
@@ -72,28 +75,27 @@ def update():
 
             models.update_entry(uuid.UUID(entry_id), updated_name, updated_amount, updated_category)
             flash("Entrée mise à jour avec succès !", "success")
-            return redirect(url_for("index.html"))
+            return redirect(url_for("web_ui.index"))
         except Exception as e:
             flash(f"Erreur lors de la mise à jour : {str(e)}", "danger")
 
     return render_template("update.html", form=form)
-
-
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
 def import_csv():
-    form = ImportCSVForm()
+    form = ImportCSVForm()  # Assurez-vous que ImportCSVForm est correctement défini
 
     if form.validate_on_submit():
         file = request.files["file"]
 
-        if file.filename == "":
+        if file.filename == "":  # Vérifiez que le fichier est bien sélectionné
             flash("Erreur : Aucun fichier sélectionné", "danger")
         else:
             try:
                 import io
                 stream = io.StringIO(file.stream.read().decode("utf-8"))
-                services.import_from_csv(stream)
+                import_from_csv(stream)  # Fonction qui gère l'importation du CSV
                 flash("Importation réussie", "success")
+                return redirect(url_for('web_ui.index'))  # Redirige vers la page d'accueil après l'importation
             except Exception as e:
                 flash(f"Erreur lors de l'importation : {str(e)}", "danger")
 
@@ -103,11 +105,11 @@ def import_csv():
 @web_ui_bp.route("/export_csv")
 def export_csv():
     try:
-        csv_output = services.export_to_csv()
+        csv_output = services.export_to_csv()  # Appelle la fonction d'exportation
         return Response(
-            csv_output.getvalue(),
+            csv_output.getvalue(),  # Retourne les données CSV
             mimetype="text/csv",
-            headers={"Content-Disposition": "attachment; filename=exported_data.csv"}
+            headers={"Content-Disposition": "attachment; filename=exported_data.csv"}  # Force le téléchargement
         )
     except Exception as e:
         return f"Erreur lors de l'exportation : {str(e)}", 500

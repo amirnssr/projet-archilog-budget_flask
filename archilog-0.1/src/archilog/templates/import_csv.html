@@ -8,20 +8,16 @@
 <h2>Importer un fichier CSV</h2>
 
 <form method="POST" enctype="multipart/form-data">
-    {{ form.hidden_tag() }}  <!-- Protection CSRF -->
-
-    <div>
-        <label for="file">{{ form.file.label }}</label>
-        {{ form.file(class="form-control", id="file") }}
-        {% for error in form.file.errors %}
-            <small class="text-danger">{{ error }}</small>
-        {% endfor %}
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <label for="file">Choisir un fichier CSV</label>
+        {{ form.file(class="form-control") }}
     </div>
-
-    <br>
-
-    <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Importer</button>
+    </div>
 </form>
+
 
 <br>
 

@@ -929,3 +929,734 @@ CREATE TABLE profile (
 2025-03-17 19:16:16,349 [INFO] 127.0.0.1 - - [17/Mar/2025 19:16:16] "GET / HTTP/1.1" 200 -
 2025-03-17 19:16:16,369 [INFO] 127.0.0.1 - - [17/Mar/2025 19:16:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
 2025-03-17 19:16:21,645 [INFO] 127.0.0.1 - - [17/Mar/2025 19:16:21] "[33mGET /mm HTTP/1.1[0m" 404 -
+2025-03-17 19:31:41,387 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:31:41,387 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:31:41,387 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:31:41,785 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:31:41,785 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:31:41,787 [INFO]  * Restarting with stat
+2025-03-17 19:31:42,135 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:31:42,136 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:31:42,136 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:31:42,470 [WARNING]  * Debugger is active!
+2025-03-17 19:31:42,477 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:32:02,168 [INFO] 127.0.0.1 - - [17/Mar/2025 19:32:02] "GET / HTTP/1.1" 200 -
+2025-03-17 19:32:02,190 [INFO] 127.0.0.1 - - [17/Mar/2025 19:32:02] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:32:03,021 [INFO] 127.0.0.1 - - [17/Mar/2025 19:32:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-17 19:32:06,958 [INFO] 127.0.0.1 - - [17/Mar/2025 19:32:06] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:32:06,985 [INFO] 127.0.0.1 - - [17/Mar/2025 19:32:06] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:33:31,153 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:31] "GET / HTTP/1.1" 200 -
+2025-03-17 19:33:31,268 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:31] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:33:32,011 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-17 19:33:33,503 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:33] "GET / HTTP/1.1" 200 -
+2025-03-17 19:33:33,532 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:33] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:33:34,136 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:34] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:33:34,171 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:34] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:33:35,723 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:35] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:33:35,759 [INFO] 127.0.0.1 - - [17/Mar/2025 19:33:35] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:34:06,948 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:34:06,948 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:34:06,948 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:34:07,615 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:34:07,615 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:34:07,619 [INFO]  * Restarting with stat
+2025-03-17 19:34:08,106 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:34:08,106 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:34:08,106 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:34:08,580 [WARNING]  * Debugger is active!
+2025-03-17 19:34:08,604 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:34:11,240 [INFO] 127.0.0.1 - - [17/Mar/2025 19:34:11] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:34:11,261 [INFO] 127.0.0.1 - - [17/Mar/2025 19:34:11] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:34:12,623 [INFO] 127.0.0.1 - - [17/Mar/2025 19:34:12] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:34:12,654 [INFO] 127.0.0.1 - - [17/Mar/2025 19:34:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:36,097 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:40:36,098 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:40:36,098 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:40:36,589 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:40:36,589 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:40:36,591 [INFO]  * Restarting with stat
+2025-03-17 19:40:37,084 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:40:37,084 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:40:37,084 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:40:37,561 [WARNING]  * Debugger is active!
+2025-03-17 19:40:37,570 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:40:39,321 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:39] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:40:39,342 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:46,874 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:46] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:40:46,903 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:46] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:47,066 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:47] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:40:47,091 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:47] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:47,815 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:47] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:40:47,846 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:47] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:48,485 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:48] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:40:48,515 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:48] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:40:48,935 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:48] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:40:48,968 [INFO] 127.0.0.1 - - [17/Mar/2025 19:40:48] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:41:54,851 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:41:54,852 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:41:54,852 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:41:55,307 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:41:55,307 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:41:55,310 [INFO]  * Restarting with stat
+2025-03-17 19:41:55,772 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:41:55,773 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:41:55,773 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:41:56,227 [WARNING]  * Debugger is active!
+2025-03-17 19:41:56,236 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:41:58,367 [INFO] 127.0.0.1 - - [17/Mar/2025 19:41:58] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:41:58,393 [INFO] 127.0.0.1 - - [17/Mar/2025 19:41:58] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:41:58,402 [INFO] 127.0.0.1 - - [17/Mar/2025 19:41:58] "[33mGET /static/style HTTP/1.1[0m" 404 -
+2025-03-17 19:41:59,517 [INFO] 127.0.0.1 - - [17/Mar/2025 19:41:59] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:41:59,546 [INFO] 127.0.0.1 - - [17/Mar/2025 19:41:59] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:00,135 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:00] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:42:00,165 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:00] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:00,578 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:00] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:42:00,613 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:00] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:00,621 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:00] "[33mGET /static/style HTTP/1.1[0m" 404 -
+2025-03-17 19:42:01,122 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:01] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:42:01,163 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:01] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:01,599 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:01] "[35m[1mGET /export_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:42:12,402 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:12] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:42:12,430 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:13,957 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:13] "[35m[1mGET /export_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:42:49,738 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:49] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:42:51,910 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:51] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:42:51,936 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:51] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:58,076 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:58] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:42:58,112 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:58] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:42:59,892 [INFO] 127.0.0.1 - - [17/Mar/2025 19:42:59] "[35m[1mGET /export_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:43:11,048 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:11] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:43:12,257 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:12] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:43:12,291 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:12] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:43:16,925 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:16] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-17 19:43:16,932 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:16] "GET / HTTP/1.1" 200 -
+2025-03-17 19:43:16,981 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:43:31,627 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:31] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:43:31,660 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:31] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:43:33,919 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:33] "[35m[1mPOST /delete HTTP/1.1[0m" 500 -
+2025-03-17 19:43:34,177 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:34] "[36mGET /delete?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-17 19:43:34,187 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:34] "[36mGET /delete?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-17 19:43:34,283 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:34] "GET /delete?__debugger__=yes&cmd=resource&f=console.png&s=xm6jESK96IcQHCXrWYbq HTTP/1.1" 200 -
+2025-03-17 19:43:34,304 [INFO] 127.0.0.1 - - [17/Mar/2025 19:43:34] "[36mGET /delete?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-17 19:45:04,584 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 19:45:04,889 [INFO]  * Restarting with stat
+2025-03-17 19:45:05,551 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:45:05,552 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:45:05,552 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:45:06,275 [WARNING]  * Debugger is active!
+2025-03-17 19:45:06,283 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:45:12,637 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:45:12,637 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:45:12,637 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:45:13,124 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:45:13,124 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:45:13,127 [INFO]  * Restarting with stat
+2025-03-17 19:45:13,593 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:45:13,593 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:45:13,593 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:45:14,150 [WARNING]  * Debugger is active!
+2025-03-17 19:45:14,158 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:45:22,622 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:22] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:45:22,644 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:22] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:45:24,637 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:24] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:45:24,669 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:24] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:45:29,673 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:29] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-17 19:45:29,684 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:29] "GET / HTTP/1.1" 200 -
+2025-03-17 19:45:29,728 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:29] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:45:39,048 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:39] "GET /delete HTTP/1.1" 200 -
+2025-03-17 19:45:39,083 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:45:41,549 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:41] "[32mPOST /delete HTTP/1.1[0m" 302 -
+2025-03-17 19:45:41,557 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:41] "GET / HTTP/1.1" 200 -
+2025-03-17 19:45:41,601 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:41] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:45:57,017 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:57] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:45:57,049 [INFO] 127.0.0.1 - - [17/Mar/2025 19:45:57] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:07,824 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:07] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:46:07,851 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:07] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:21,619 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:21] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 19:46:21,646 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:21] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:25,564 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:25] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-17 19:46:25,571 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:25] "GET / HTTP/1.1" 200 -
+2025-03-17 19:46:25,600 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:25] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:35,216 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:35] "GET /update HTTP/1.1" 200 -
+2025-03-17 19:46:35,242 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:35] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:35,246 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:35] "[33mGET /static/style HTTP/1.1[0m" 404 -
+2025-03-17 19:46:40,685 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:40] "[32mPOST /update HTTP/1.1[0m" 302 -
+2025-03-17 19:46:40,694 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:40] "GET / HTTP/1.1" 200 -
+2025-03-17 19:46:40,725 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:40] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:46:54,324 [INFO] 127.0.0.1 - - [17/Mar/2025 19:46:54] "[35m[1mGET /export_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:49:16,588 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 19:49:16,850 [INFO]  * Restarting with stat
+2025-03-17 19:49:17,554 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:49:17,555 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:49:17,555 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:49:23,134 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:49:23,134 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:49:23,134 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:49:23,620 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:49:23,620 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:49:23,622 [INFO]  * Restarting with stat
+2025-03-17 19:49:24,093 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:49:24,093 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:49:24,093 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:49:24,574 [WARNING]  * Debugger is active!
+2025-03-17 19:49:24,582 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:49:26,446 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:26] "GET /export_csv HTTP/1.1" 200 -
+2025-03-17 19:49:29,236 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:29] "[35m[1mGET /import_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:49:29,460 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:29] "GET /import_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-17 19:49:29,465 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:29] "GET /import_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-17 19:49:29,522 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:29] "GET /import_csv?__debugger__=yes&cmd=resource&f=console.png&s=zdkjeKkFNQpmv25T4lda HTTP/1.1" 200 -
+2025-03-17 19:49:29,546 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:29] "GET /import_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-17 19:49:36,425 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:36] "GET /export_csv HTTP/1.1" 200 -
+2025-03-17 19:49:49,737 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:49] "[35m[1mGET /import_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:49:49,767 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:49] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-17 19:49:49,776 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:49] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-17 19:49:49,816 [INFO] 127.0.0.1 - - [17/Mar/2025 19:49:49] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=console.png&s=zdkjeKkFNQpmv25T4lda HTTP/1.1[0m" 304 -
+2025-03-17 19:51:12,383 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 19:51:12,623 [INFO]  * Restarting with stat
+2025-03-17 19:51:13,286 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:51:13,286 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:51:13,286 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:51:18,393 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:51:18,393 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:51:18,393 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:51:18,882 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:51:18,883 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:51:18,885 [INFO]  * Restarting with stat
+2025-03-17 19:51:19,371 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:51:19,371 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:51:19,371 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:51:19,877 [WARNING]  * Debugger is active!
+2025-03-17 19:51:19,888 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:51:20,995 [INFO] 127.0.0.1 - - [17/Mar/2025 19:51:20] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:51:21,035 [INFO] 127.0.0.1 - - [17/Mar/2025 19:51:21] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:51:29,946 [INFO] 127.0.0.1 - - [17/Mar/2025 19:51:29] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:51:29,972 [INFO] 127.0.0.1 - - [17/Mar/2025 19:51:29] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:51:38,573 [INFO] 127.0.0.1 - - [17/Mar/2025 19:51:38] "[35m[1mGET /export_csv HTTP/1.1[0m" 500 -
+2025-03-17 19:53:52,412 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-17 19:53:52,675 [INFO]  * Restarting with stat
+2025-03-17 19:53:53,375 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:53:53,375 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:53:53,375 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:53:58,683 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:53:58,683 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:53:58,683 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:53:59,178 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:53:59,179 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:53:59,182 [INFO]  * Restarting with stat
+2025-03-17 19:53:59,657 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:53:59,657 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:53:59,657 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:54:00,156 [WARNING]  * Debugger is active!
+2025-03-17 19:54:00,167 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:54:03,354 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:03] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:54:03,400 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:03] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:54:04,673 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:04] "GET /export_csv HTTP/1.1" 200 -
+2025-03-17 19:54:15,805 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:15] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:54:15,837 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:15] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:54:17,851 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:17] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 19:54:17,877 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:17] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:54:23,345 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:23] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:54:23,372 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:23] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:54:37,449 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:37] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:54:37,471 [INFO] 127.0.0.1 - - [17/Mar/2025 19:54:37] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:55:47,184 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-17 19:55:47,427 [INFO]  * Restarting with stat
+2025-03-17 19:55:48,138 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:55:48,138 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:55:48,138 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:55:53,389 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:55:53,389 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:55:53,390 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:55:53,882 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:55:53,882 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:55:53,885 [INFO]  * Restarting with stat
+2025-03-17 19:55:54,337 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:55:54,337 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:55:54,337 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:55:54,889 [WARNING]  * Debugger is active!
+2025-03-17 19:55:54,897 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:55:57,437 [INFO] 127.0.0.1 - - [17/Mar/2025 19:55:57] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:55:57,465 [INFO] 127.0.0.1 - - [17/Mar/2025 19:55:57] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:56:02,658 [INFO] 127.0.0.1 - - [17/Mar/2025 19:56:02] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:56:02,682 [INFO] 127.0.0.1 - - [17/Mar/2025 19:56:02] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:57:33,585 [INFO] 127.0.0.1 - - [17/Mar/2025 19:57:33] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:57:33,608 [INFO] 127.0.0.1 - - [17/Mar/2025 19:57:33] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:59:05,645 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-17 19:59:05,882 [INFO]  * Restarting with stat
+2025-03-17 19:59:06,687 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:59:06,687 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:59:06,689 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:59:07,302 [WARNING]  * Debugger is active!
+2025-03-17 19:59:07,312 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:59:16,439 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:59:16,440 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:59:16,440 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:59:16,963 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 19:59:16,963 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 19:59:16,967 [INFO]  * Restarting with stat
+2025-03-17 19:59:17,430 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 19:59:17,430 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 19:59:17,430 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 19:59:17,875 [WARNING]  * Debugger is active!
+2025-03-17 19:59:17,884 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 19:59:22,937 [INFO] 127.0.0.1 - - [17/Mar/2025 19:59:22] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:59:22,960 [INFO] 127.0.0.1 - - [17/Mar/2025 19:59:22] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 19:59:27,444 [INFO] 127.0.0.1 - - [17/Mar/2025 19:59:27] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 19:59:27,471 [INFO] 127.0.0.1 - - [17/Mar/2025 19:59:27] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:09:19,702 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:09:19,703 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:09:19,703 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:09:20,245 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:09:20,245 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:09:20,247 [INFO]  * Restarting with stat
+2025-03-17 20:09:20,727 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:09:20,728 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:09:20,728 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:09:21,270 [WARNING]  * Debugger is active!
+2025-03-17 20:09:21,281 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:09:25,175 [INFO] 127.0.0.1 - - [17/Mar/2025 20:09:25] "[35m[1mPOST /import_csv HTTP/1.1[0m" 500 -
+2025-03-17 20:09:25,395 [INFO] 127.0.0.1 - - [17/Mar/2025 20:09:25] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-17 20:09:25,406 [INFO] 127.0.0.1 - - [17/Mar/2025 20:09:25] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-17 20:09:25,468 [INFO] 127.0.0.1 - - [17/Mar/2025 20:09:25] "GET /import_csv?__debugger__=yes&cmd=resource&f=console.png&s=MQiHR4wkvCS6lgLbgFPy HTTP/1.1" 200 -
+2025-03-17 20:09:25,491 [INFO] 127.0.0.1 - - [17/Mar/2025 20:09:25] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-17 20:11:19,100 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:11:19,100 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:11:19,100 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:11:19,569 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:11:19,569 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:11:19,571 [INFO]  * Restarting with stat
+2025-03-17 20:11:20,044 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:11:20,044 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:11:20,044 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:11:20,507 [WARNING]  * Debugger is active!
+2025-03-17 20:11:20,516 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:11:27,085 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:27] "GET / HTTP/1.1" 200 -
+2025-03-17 20:11:27,174 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:27] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:11:30,040 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:30] "[31m[1mGET /import_csv HTTP/1.1[0m" 405 -
+2025-03-17 20:11:32,507 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:32] "GET /update HTTP/1.1" 200 -
+2025-03-17 20:11:32,539 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:32] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:11:32,540 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:32] "[33mGET /static/style HTTP/1.1[0m" 404 -
+2025-03-17 20:11:34,263 [INFO] 127.0.0.1 - - [17/Mar/2025 20:11:34] "[31m[1mGET /import_csv HTTP/1.1[0m" 405 -
+2025-03-17 20:12:00,389 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:12:00,389 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:12:00,390 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:12:00,903 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:12:00,903 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:12:00,907 [INFO]  * Restarting with stat
+2025-03-17 20:12:01,374 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:12:01,374 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:12:01,374 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:12:01,844 [WARNING]  * Debugger is active!
+2025-03-17 20:12:01,853 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:12:02,331 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:02] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:12:02,360 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:02] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:12:07,758 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:07] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:12:07,790 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:07] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:12:33,007 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:33] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:12:33,032 [INFO] 127.0.0.1 - - [17/Mar/2025 20:12:33] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:14:28,718 [INFO] 127.0.0.1 - - [17/Mar/2025 20:14:28] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:14:28,741 [INFO] 127.0.0.1 - - [17/Mar/2025 20:14:28] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:16:58,259 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 20:16:58,546 [INFO]  * Restarting with stat
+2025-03-17 20:16:59,238 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:16:59,238 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:16:59,238 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:16:59,813 [WARNING]  * Debugger is active!
+2025-03-17 20:16:59,824 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:17:05,383 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:17:05,383 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:17:05,383 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:17:05,885 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:17:05,885 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:17:05,886 [INFO]  * Restarting with stat
+2025-03-17 20:17:06,347 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:17:06,347 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:17:06,347 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:17:06,803 [WARNING]  * Debugger is active!
+2025-03-17 20:17:06,812 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:17:10,986 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:10] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:17:11,011 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:11] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:17:17,956 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:17] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:17:17,979 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:17] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:17:35,624 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:35] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:17:44,281 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:44] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:17:44,315 [INFO] 127.0.0.1 - - [17/Mar/2025 20:17:44] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:19:38,000 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:19:38,000 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:19:38,000 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:19:38,459 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:19:38,459 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:19:38,461 [INFO]  * Restarting with stat
+2025-03-17 20:19:38,930 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:19:38,931 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:19:38,931 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:19:39,490 [WARNING]  * Debugger is active!
+2025-03-17 20:19:39,504 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:19:42,257 [INFO] 127.0.0.1 - - [17/Mar/2025 20:19:42] "[35m[1mPOST /import_csv HTTP/1.1[0m" 500 -
+2025-03-17 20:19:42,498 [INFO] 127.0.0.1 - - [17/Mar/2025 20:19:42] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-17 20:19:42,511 [INFO] 127.0.0.1 - - [17/Mar/2025 20:19:42] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-17 20:19:42,620 [INFO] 127.0.0.1 - - [17/Mar/2025 20:19:42] "GET /import_csv?__debugger__=yes&cmd=resource&f=console.png&s=e4G9U5tfkoaZYa1VEtt4 HTTP/1.1" 200 -
+2025-03-17 20:19:42,639 [INFO] 127.0.0.1 - - [17/Mar/2025 20:19:42] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-17 20:20:04,820 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:20:04,820 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:20:04,820 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:20:05,297 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:20:05,297 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:20:05,300 [INFO]  * Restarting with stat
+2025-03-17 20:20:05,834 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:20:05,834 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:20:05,834 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:20:06,309 [WARNING]  * Debugger is active!
+2025-03-17 20:20:06,318 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:20:08,228 [INFO] 127.0.0.1 - - [17/Mar/2025 20:20:08] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:20:08,273 [INFO] 127.0.0.1 - - [17/Mar/2025 20:20:08] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:21:05,389 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\models.py', reloading
+2025-03-17 20:21:05,656 [INFO]  * Restarting with stat
+2025-03-17 20:21:06,364 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:21:06,364 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:21:06,364 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:21:06,995 [WARNING]  * Debugger is active!
+2025-03-17 20:21:07,004 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:21:13,462 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:21:13,463 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:21:13,463 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:21:13,951 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:21:13,951 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:21:13,953 [INFO]  * Restarting with stat
+2025-03-17 20:21:14,414 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:21:14,414 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:21:14,414 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:21:14,852 [WARNING]  * Debugger is active!
+2025-03-17 20:21:14,860 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:21:25,173 [INFO] 127.0.0.1 - - [17/Mar/2025 20:21:25] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:21:25,196 [INFO] 127.0.0.1 - - [17/Mar/2025 20:21:25] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:21:29,617 [INFO] 127.0.0.1 - - [17/Mar/2025 20:21:29] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:21:29,641 [INFO] 127.0.0.1 - - [17/Mar/2025 20:21:29] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:24:01,563 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\forms.py', reloading
+2025-03-17 20:24:01,820 [INFO]  * Restarting with stat
+2025-03-17 20:24:02,455 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:24:02,455 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:24:02,455 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:24:02,985 [WARNING]  * Debugger is active!
+2025-03-17 20:24:02,995 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:24:09,732 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:24:09,732 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:24:09,732 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:24:10,237 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:24:10,237 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:24:10,240 [INFO]  * Restarting with stat
+2025-03-17 20:24:10,703 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:24:10,703 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:24:10,703 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:24:11,144 [WARNING]  * Debugger is active!
+2025-03-17 20:24:11,153 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:24:17,687 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:17] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:24:17,711 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:17] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:24:26,828 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:26] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:24:26,859 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:26] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:24:34,881 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:34] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 20:24:34,910 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:34] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:24:39,255 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:39] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-17 20:24:39,266 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:39] "GET / HTTP/1.1" 200 -
+2025-03-17 20:24:39,294 [INFO] 127.0.0.1 - - [17/Mar/2025 20:24:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:27:10,327 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:27:10,327 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:27:10,328 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:27:10,806 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:27:10,806 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:27:10,807 [INFO]  * Restarting with stat
+2025-03-17 20:27:11,271 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:27:11,271 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:27:11,271 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:27:11,726 [WARNING]  * Debugger is active!
+2025-03-17 20:27:11,735 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:27:16,176 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:16] "[33mGET /import_csv HTTP/1.1[0m" 404 -
+2025-03-17 20:27:48,032 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 20:27:48,307 [INFO]  * Restarting with stat
+2025-03-17 20:27:48,929 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:27:48,930 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:27:48,930 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:27:49,433 [WARNING]  * Debugger is active!
+2025-03-17 20:27:49,443 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:27:54,867 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:27:54,867 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:27:54,867 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:27:55,347 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:27:55,347 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:27:55,349 [INFO]  * Restarting with stat
+2025-03-17 20:27:55,822 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:27:55,822 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:27:55,823 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:27:56,276 [WARNING]  * Debugger is active!
+2025-03-17 20:27:56,291 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:27:59,536 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:59] "[35m[1mGET /import_csv HTTP/1.1[0m" 500 -
+2025-03-17 20:27:59,757 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:59] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-03-17 20:27:59,766 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:59] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-03-17 20:27:59,818 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:59] "GET /import_csv?__debugger__=yes&cmd=resource&f=console.png&s=trJ2P3a1dd5BAsSEM7wW HTTP/1.1" 200 -
+2025-03-17 20:27:59,835 [INFO] 127.0.0.1 - - [17/Mar/2025 20:27:59] "[36mGET /import_csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-17 20:29:22,753 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:29:22,753 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:29:22,753 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:29:23,256 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:29:23,256 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:29:23,260 [INFO]  * Restarting with stat
+2025-03-17 20:29:23,713 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:29:23,713 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:29:23,713 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:29:24,237 [WARNING]  * Debugger is active!
+2025-03-17 20:29:24,247 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:29:28,205 [INFO] 127.0.0.1 - - [17/Mar/2025 20:29:28] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:29:28,230 [INFO] 127.0.0.1 - - [17/Mar/2025 20:29:28] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:29:34,251 [INFO] 127.0.0.1 - - [17/Mar/2025 20:29:34] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:29:34,285 [INFO] 127.0.0.1 - - [17/Mar/2025 20:29:34] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:30:48,444 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:30:48,444 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:30:48,444 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:30:48,929 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:30:48,930 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:30:48,932 [INFO]  * Restarting with stat
+2025-03-17 20:30:49,388 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:30:49,388 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:30:49,388 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:30:49,908 [WARNING]  * Debugger is active!
+2025-03-17 20:30:49,918 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:30:53,487 [INFO] 127.0.0.1 - - [17/Mar/2025 20:30:53] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:30:53,514 [INFO] 127.0.0.1 - - [17/Mar/2025 20:30:53] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:31:01,822 [INFO] 127.0.0.1 - - [17/Mar/2025 20:31:01] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:31:01,844 [INFO] 127.0.0.1 - - [17/Mar/2025 20:31:01] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:32:03,317 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:32:03,318 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:32:03,318 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:32:03,823 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:32:03,823 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:32:03,825 [INFO]  * Restarting with stat
+2025-03-17 20:32:04,310 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:32:04,310 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:32:04,310 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:32:04,771 [WARNING]  * Debugger is active!
+2025-03-17 20:32:04,784 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:32:10,535 [INFO] 127.0.0.1 - - [17/Mar/2025 20:32:10] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:32:10,557 [INFO] 127.0.0.1 - - [17/Mar/2025 20:32:10] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:32:16,793 [INFO] 127.0.0.1 - - [17/Mar/2025 20:32:16] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:32:16,818 [INFO] 127.0.0.1 - - [17/Mar/2025 20:32:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:34:16,975 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:34:16,975 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:34:16,976 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:34:17,488 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:34:17,489 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:34:17,491 [INFO]  * Restarting with stat
+2025-03-17 20:34:17,955 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:34:17,955 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:34:17,955 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:34:18,449 [WARNING]  * Debugger is active!
+2025-03-17 20:34:18,461 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:34:21,533 [INFO] 127.0.0.1 - - [17/Mar/2025 20:34:21] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:34:21,556 [INFO] 127.0.0.1 - - [17/Mar/2025 20:34:21] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:34:27,676 [INFO] 127.0.0.1 - - [17/Mar/2025 20:34:27] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:34:27,699 [INFO] 127.0.0.1 - - [17/Mar/2025 20:34:27] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:36:21,668 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-17 20:36:21,916 [INFO]  * Restarting with stat
+2025-03-17 20:36:22,532 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:36:22,532 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:36:22,532 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:36:23,106 [WARNING]  * Debugger is active!
+2025-03-17 20:36:23,115 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:36:28,573 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:36:28,573 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:36:28,573 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:36:29,078 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:36:29,078 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:36:29,080 [INFO]  * Restarting with stat
+2025-03-17 20:36:29,561 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:36:29,562 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:36:29,562 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:36:30,055 [WARNING]  * Debugger is active!
+2025-03-17 20:36:30,063 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:36:32,840 [INFO] 127.0.0.1 - - [17/Mar/2025 20:36:32] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:36:32,868 [INFO] 127.0.0.1 - - [17/Mar/2025 20:36:32] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:36:39,809 [INFO] 127.0.0.1 - - [17/Mar/2025 20:36:39] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:36:39,837 [INFO] 127.0.0.1 - - [17/Mar/2025 20:36:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:39:19,897 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 20:39:20,167 [INFO]  * Restarting with stat
+2025-03-17 20:39:20,797 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:39:20,797 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:39:20,798 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:39:21,449 [WARNING]  * Debugger is active!
+2025-03-17 20:39:21,459 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:39:27,342 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:39:27,343 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:39:27,343 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:39:27,888 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:39:27,888 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:39:27,890 [INFO]  * Restarting with stat
+2025-03-17 20:39:28,414 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:39:28,414 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:39:28,414 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:39:28,927 [WARNING]  * Debugger is active!
+2025-03-17 20:39:28,935 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:39:32,035 [INFO] 127.0.0.1 - - [17/Mar/2025 20:39:32] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:39:32,059 [INFO] 127.0.0.1 - - [17/Mar/2025 20:39:32] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:39:39,381 [INFO] 127.0.0.1 - - [17/Mar/2025 20:39:39] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:39:39,406 [INFO] 127.0.0.1 - - [17/Mar/2025 20:39:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:41:23,102 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\models.py', reloading
+2025-03-17 20:41:23,397 [INFO]  * Restarting with stat
+2025-03-17 20:41:24,202 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:41:24,202 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:41:24,202 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:41:24,758 [WARNING]  * Debugger is active!
+2025-03-17 20:41:24,766 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:41:30,941 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:41:30,941 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:41:30,941 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:41:31,454 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:41:31,454 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:41:31,458 [INFO]  * Restarting with stat
+2025-03-17 20:41:31,916 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:41:31,916 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:41:31,916 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:41:32,359 [WARNING]  * Debugger is active!
+2025-03-17 20:41:32,368 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:41:36,648 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:36] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:41:36,676 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:36] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:41:37,844 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:37] "GET / HTTP/1.1" 200 -
+2025-03-17 20:41:37,871 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:37] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:41:38,987 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:38] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:41:39,015 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:39] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:41:45,945 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:45] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:41:45,975 [INFO] 127.0.0.1 - - [17/Mar/2025 20:41:45] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:45:43,615 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-17 20:45:43,906 [INFO]  * Restarting with stat
+2025-03-17 20:45:44,770 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:45:44,770 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:45:44,770 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:45:45,491 [WARNING]  * Debugger is active!
+2025-03-17 20:45:45,501 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:45:51,197 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:45:51,197 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:45:51,198 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:45:51,696 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:45:51,696 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:45:51,699 [INFO]  * Restarting with stat
+2025-03-17 20:45:52,154 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:45:52,154 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:45:52,154 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:45:52,644 [WARNING]  * Debugger is active!
+2025-03-17 20:45:52,654 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:45:55,717 [INFO] 127.0.0.1 - - [17/Mar/2025 20:45:55] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:45:55,741 [INFO] 127.0.0.1 - - [17/Mar/2025 20:45:55] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:46:04,414 [INFO] 127.0.0.1 - - [17/Mar/2025 20:46:04] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:46:04,436 [INFO] 127.0.0.1 - - [17/Mar/2025 20:46:04] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:48:10,271 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-17 20:48:10,516 [INFO]  * Restarting with stat
+2025-03-17 20:48:11,184 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:48:11,185 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:48:11,185 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:48:11,827 [WARNING]  * Debugger is active!
+2025-03-17 20:48:11,836 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:48:16,704 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:48:16,718 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:48:16,718 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:48:17,247 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:48:17,247 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:48:17,248 [INFO]  * Restarting with stat
+2025-03-17 20:48:17,753 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:48:17,753 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:48:17,753 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:48:18,237 [WARNING]  * Debugger is active!
+2025-03-17 20:48:18,246 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:48:21,288 [INFO] 127.0.0.1 - - [17/Mar/2025 20:48:21] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:48:21,314 [INFO] 127.0.0.1 - - [17/Mar/2025 20:48:21] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:48:27,770 [INFO] 127.0.0.1 - - [17/Mar/2025 20:48:27] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:48:27,800 [INFO] 127.0.0.1 - - [17/Mar/2025 20:48:27] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:49:31,573 [INFO] 127.0.0.1 - - [17/Mar/2025 20:49:31] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:49:31,601 [INFO] 127.0.0.1 - - [17/Mar/2025 20:49:31] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:49:37,580 [INFO] 127.0.0.1 - - [17/Mar/2025 20:49:37] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:49:37,612 [INFO] 127.0.0.1 - - [17/Mar/2025 20:49:37] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:56:34,758 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\forms.py', reloading
+2025-03-17 20:56:35,096 [INFO]  * Restarting with stat
+2025-03-17 20:56:35,832 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:56:35,833 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:56:35,833 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:56:36,596 [WARNING]  * Debugger is active!
+2025-03-17 20:56:36,615 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:56:41,784 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:56:41,784 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:56:41,785 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:56:42,593 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-17 20:56:42,593 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-17 20:56:42,596 [INFO]  * Restarting with stat
+2025-03-17 20:56:43,118 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-17 20:56:43,119 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-17 20:56:43,119 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-17 20:56:43,609 [WARNING]  * Debugger is active!
+2025-03-17 20:56:43,619 [INFO]  * Debugger PIN: 660-684-526
+2025-03-17 20:56:46,857 [INFO] The CSRF token is missing.
+2025-03-17 20:56:46,875 [INFO] 127.0.0.1 - - [17/Mar/2025 20:56:46] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:56:46,900 [INFO] 127.0.0.1 - - [17/Mar/2025 20:56:46] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:56:59,235 [INFO] 127.0.0.1 - - [17/Mar/2025 20:56:59] "GET / HTTP/1.1" 200 -
+2025-03-17 20:56:59,295 [INFO] 127.0.0.1 - - [17/Mar/2025 20:56:59] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:01,816 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:01] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:57:01,863 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:01] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:07,979 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:07] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-17 20:57:07,989 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:07] "GET / HTTP/1.1" 200 -
+2025-03-17 20:57:08,026 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:08] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:24,408 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:24] "GET /update HTTP/1.1" 200 -
+2025-03-17 20:57:24,429 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:24] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:24,440 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:24] "[33mGET /static/style HTTP/1.1[0m" 404 -
+2025-03-17 20:57:35,115 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:35] "[32mPOST /update HTTP/1.1[0m" 302 -
+2025-03-17 20:57:35,124 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:35] "GET / HTTP/1.1" 200 -
+2025-03-17 20:57:35,154 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:35] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:43,593 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:43] "GET /delete HTTP/1.1" 200 -
+2025-03-17 20:57:43,620 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:43] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:45,645 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:45] "[32mPOST /delete HTTP/1.1[0m" 302 -
+2025-03-17 20:57:45,654 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:45] "GET / HTTP/1.1" 200 -
+2025-03-17 20:57:45,685 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:45] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:57:53,823 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:53] "GET /add_entry HTTP/1.1" 200 -
+2025-03-17 20:57:53,849 [INFO] 127.0.0.1 - - [17/Mar/2025 20:57:53] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:03,223 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:03] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-17 20:58:03,232 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:03] "GET / HTTP/1.1" 200 -
+2025-03-17 20:58:03,261 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:03] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:08,318 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:08] "GET /export_csv HTTP/1.1" 200 -
+2025-03-17 20:58:11,502 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:11] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:58:11,535 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:11] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:16,413 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:16] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:58:16,445 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:16] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:22,962 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:22] "GET / HTTP/1.1" 200 -
+2025-03-17 20:58:22,993 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:22] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:23,908 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:23] "GET /import_csv HTTP/1.1" 200 -
+2025-03-17 20:58:23,939 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:23] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:28,889 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:28] "POST /import_csv HTTP/1.1" 200 -
+2025-03-17 20:58:28,913 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:28] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
+2025-03-17 20:58:38,136 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:38] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-17 20:58:38,146 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:38] "GET / HTTP/1.1" 200 -
+2025-03-17 20:58:38,181 [INFO] 127.0.0.1 - - [17/Mar/2025 20:58:38] "[33mGET /static/style.css HTTP/1.1[0m" 404 -
