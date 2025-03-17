@@ -6,8 +6,7 @@ import archilog.services as services
 from archilog.forms import EntryForm, DeleteForm, UpdateForm, ImportCSVForm
 from .. import config
 from .. import models
-from archilog.config import db
-from archilog.models import User 
+
 
 web_ui_bp = Blueprint("web_ui", __name__, template_folder="../../templates")
 
