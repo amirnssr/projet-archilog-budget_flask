@@ -1,42 +1,52 @@
-
-import dataclasses
-from flask import Response
-from archilog.models import create_entry, get_all_entries, Entry
-from archilog.models import db, Entry
 import csv
-from io import StringIO
+import io
+from archilog.models import Entry 
+from archilog.models import create_entry
+from archilog.models import get_all_entries
 
+def import_from_csv(csv_file: io.BytesIO) -> None:
+    """Importer des entrées depuis un fichier CSV"""
+    # Ouvrir le fichier CSV et le lire ligne par ligne
+    csv_reader = csv.DictReader(
+        io.TextIOWrapper(csv_file, encoding='utf-8'),  # Utiliser TextIOWrapper pour lire le fichier en texte
+        fieldnames=["name", "amount", "category"]
+    )
 
+    next(csv_reader)  # Ignorer la première ligne (les en-têtes)
 
-
-
-def import_from_csv(file_stream):
-    try:
-        reader = csv.DictReader(file_stream)  # Lire le fichier CSV
-        for row in reader:
-            new_entry = Entry(
-                name=row['name'],  # Assurez-vous que les noms des colonnes correspondent
-                amount=float(row['amount']),  # Conversion des montants en float
-                category=row['category']
+    # Lire chaque ligne du fichier CSV et insérer dans la base de données
+    for row in csv_reader:
+        try:
+            create_entry(
+                name=row["name"],
+                amount=float(row["amount"]),  # Convertir la chaîne en float
+                category=row["category"]
             )
-            db.session.add(new_entry)  # Ajouter à la session de la base de données
-        db.session.commit()  # Commit des données dans la base
-    except Exception as e:
-        raise Exception(f"Erreur d'importation CSV : {str(e)}")
+        except ValueError:
+            # Si une erreur de format survient (par exemple, une valeur non convertible en float)
+            print(f"Erreur de format dans la ligne: {row}")
+
+
+def export_to_csv() -> io.StringIO:
+    output = io.StringIO()
+    # Exclure l'ID des champs à exporter
+    csv_writer = csv.DictWriter(
+        output, fieldnames=["name", "amount", "category"]
+    )
+    csv_writer.writeheader()
     
-    
-def export_to_csv():
-    entries = Entry.query.all()
-
-    output = StringIO()
-    writer = csv.writer(output)
-
-    # Écrire les en-têtes
-    writer.writerow(['ID', 'Nom', 'Montant', 'Catégorie'])
-
-    # Écrire les données
+    entries = get_all_entries()
     for entry in entries:
-        writer.writerow([entry.id, entry.name, entry.amount, entry.category])
-
-    output.seek(0)
+        if isinstance(entry, Entry):
+            # Créer un dictionnaire sans l'ID
+            entry_dict = {
+                "name": entry.name,
+                "amount": entry.amount,
+                "category": entry.category
+            }
+            csv_writer.writerow(entry_dict)
+    
+    with open('entries.csv', 'w', newline='', encoding='utf-8') as file:
+        file.write(output.getvalue())
+    
     return output

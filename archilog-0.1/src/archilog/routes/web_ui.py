@@ -1,18 +1,14 @@
 import uuid
-import click
 from flask import Blueprint, render_template, request, redirect, url_for, Response, flash
 import archilog.models as models
 import archilog.services as services
-from archilog.forms import EntryForm, DeleteForm, UpdateForm, ImportCSVForm
-from .. import config
-from archilog.models import Entry, db  
-import csv
-from io import StringIO
+from archilog.forms import  DeleteForm, UpdateForm, ImportCSVForm, EntryForm
+from archilog.models import Entry 
 from archilog.services import import_from_csv
 
 web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
 
-### ROUTES FLASK ###
+
 
 @web_ui_bp.route("/")
 def index():
@@ -21,27 +17,21 @@ def index():
 
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
 def add_entry():
+    form = EntryForm()  # Créer une instance du formulaire
     
-    if request.method == "POST":
-        name = request.form.get("name")
-        amount = request.form.get("amount")
-        category = request.form.get("category")
+    if form.validate_on_submit():  # Vérifier si le formulaire a été soumis et est valide
+        name = form.name.data
+        amount = form.amount.data
+        category = form.category.data
 
-        if name and amount:
-            try:
-                amount = float(amount)
-                new_entry = Entry(name=name, amount=amount, category=category)  # Création d'une nouvelle entrée
-                db.session.add(new_entry)
-                db.session.commit()
-                flash("Entrée ajoutée avec succès !", "success")
-            except ValueError:
-                flash("Erreur : Valeur du montant invalide", "danger")
-                return redirect(url_for("web_ui.add_entry"))
+        try:
+            models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
+            flash("Entrée ajoutée avec succès !", "success")
+            return redirect(url_for("web_ui.index"))  # Redirection vers l'index après ajout
+        except ValueError:
+            flash("Erreur : Valeur du montant invalide", "danger")
 
-        return redirect(url_for("web_ui.index"))  # Redirection vers l'index après ajout
-
-    return render_template("home.html")
-
+    return render_template("home.html", form=form)  # Passer le formulaire à la vue
 
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
 def delete():
@@ -56,6 +46,7 @@ def delete():
         return redirect(url_for("web_ui.index"))
 
     return render_template("delete.html", form=form)
+
 
 
 @web_ui_bp.route("/update", methods=["GET", "POST"])
@@ -80,6 +71,8 @@ def update():
             flash(f"Erreur lors de la mise à jour : {str(e)}", "danger")
 
     return render_template("update.html", form=form)
+
+
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
 def import_csv():
     form = ImportCSVForm()  # Assurez-vous que ImportCSVForm est correctement défini
@@ -100,7 +93,6 @@ def import_csv():
                 flash(f"Erreur lors de l'importation : {str(e)}", "danger")
 
     return render_template("import_csv.html", form=form)
-
 
 @web_ui_bp.route("/export_csv")
 def export_csv():

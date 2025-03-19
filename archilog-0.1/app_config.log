@@ -1806,3 +1806,231 @@ CREATE TABLE profile (
 2025-03-19 13:22:35,533 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
 2025-03-19 13:22:35,716 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
 2025-03-19 13:29:31,265 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\__init__.py', reloading
+2025-03-19 13:38:03,348 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:38:03,348 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:38:03,349 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:38:04,046 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:38:04,046 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:38:04,049 [INFO]  * Restarting with stat
+2025-03-19 13:38:04,517 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:38:04,517 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:38:04,517 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:38:05,007 [WARNING]  * Debugger is active!
+2025-03-19 13:38:05,020 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:38:51,677 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\__init__.py', reloading
+2025-03-19 13:38:51,954 [INFO]  * Restarting with stat
+2025-03-19 13:38:52,679 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:38:52,679 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:38:52,679 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:38:53,314 [WARNING]  * Debugger is active!
+2025-03-19 13:38:53,323 [INFO]  * Debugger PIN: 768-428-251
+2025-03-19 13:38:59,803 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:38:59,803 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:38:59,804 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:39:10,735 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:39:10,735 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:39:10,736 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:39:11,233 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:39:11,233 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:39:11,235 [INFO]  * Restarting with stat
+2025-03-19 13:39:11,712 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:39:11,712 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:39:11,712 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:39:12,203 [WARNING]  * Debugger is active!
+2025-03-19 13:39:12,213 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:39:23,150 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:39:23,151 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:39:23,151 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:39:23,714 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:39:23,716 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:39:23,717 [INFO]  * Restarting with stat
+2025-03-19 13:39:24,252 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:39:24,252 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:39:24,253 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:39:24,738 [WARNING]  * Debugger is active!
+2025-03-19 13:39:24,748 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:40:47,484 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-19 13:40:47,759 [INFO]  * Restarting with stat
+2025-03-19 13:40:48,461 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:40:48,462 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:40:48,462 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:40:48,993 [WARNING]  * Debugger is active!
+2025-03-19 13:40:49,001 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:41:35,424 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:41:35,424 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:41:35,424 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:41:35,942 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:41:35,943 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:41:35,945 [INFO]  * Restarting with stat
+2025-03-19 13:41:36,433 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:41:36,434 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:41:36,434 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:41:36,936 [WARNING]  * Debugger is active!
+2025-03-19 13:41:36,945 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:41:39,179 [INFO] 127.0.0.1 - - [19/Mar/2025 13:41:39] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:41:41,645 [INFO] 127.0.0.1 - - [19/Mar/2025 13:41:41] "GET / HTTP/1.1" 200 -
+2025-03-19 13:41:46,132 [INFO] 127.0.0.1 - - [19/Mar/2025 13:41:46] "[33mGET /vzy HTTP/1.1[0m" 404 -
+2025-03-19 13:48:57,093 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:48:57,094 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:48:57,094 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:49:13,290 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:49:13,290 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:49:13,290 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:56:58,333 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///src/archilog/data.db, DEBUG: True
+2025-03-19 13:56:58,334 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:56:58,334 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///src/archilog/data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:57:32,374 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:57:32,374 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:57:32,375 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:57:32,922 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:57:32,923 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:57:32,927 [INFO]  * Restarting with stat
+2025-03-19 13:57:33,398 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:57:33,398 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:57:33,398 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:57:33,918 [WARNING]  * Debugger is active!
+2025-03-19 13:57:33,928 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:02:23,818 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:02:23,818 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:02:23,818 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:07:40,254 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:07:40,254 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:07:40,254 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:08:52,669 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:08:52,670 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:08:52,670 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:26:36,907 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:26:36,909 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:26:36,909 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:36:34,696 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:36:34,696 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:36:34,696 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:37:58,542 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:37:58,542 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:37:58,542 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:37:58,935 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:37:58,936 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:37:58,936 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:37:58,941 [INFO] BEGIN (implicit)
+2025-03-19 14:37:58,941 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:37:58,942 [INFO] [raw sql] ()
+2025-03-19 14:37:58,943 [INFO] PRAGMA temp.table_info("profile")
+2025-03-19 14:37:58,943 [INFO] [raw sql] ()
+2025-03-19 14:37:58,944 [INFO] 
+CREATE TABLE profile (
+	id VARCHAR NOT NULL, 
+	name VARCHAR, 
+	amount FLOAT, 
+	category VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2025-03-19 14:37:58,944 [INFO] [no key 0.00028s] ()
+2025-03-19 14:37:58,951 [INFO] COMMIT
+2025-03-19 14:39:17,518 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:39:17,518 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:39:17,518 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:39:17,870 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:39:17,870 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:39:17,871 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:39:17,875 [INFO] BEGIN (implicit)
+2025-03-19 14:39:17,876 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:39:17,876 [INFO] [raw sql] ()
+2025-03-19 14:39:17,877 [INFO] COMMIT
+2025-03-19 14:39:17,971 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 14:39:17,971 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 14:39:17,974 [INFO]  * Restarting with stat
+2025-03-19 14:39:18,453 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:39:18,454 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:39:18,454 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:39:18,799 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:39:18,799 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:39:18,799 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:39:18,802 [INFO] BEGIN (implicit)
+2025-03-19 14:39:18,803 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:39:18,803 [INFO] [raw sql] ()
+2025-03-19 14:39:18,804 [INFO] COMMIT
+2025-03-19 14:39:18,830 [WARNING]  * Debugger is active!
+2025-03-19 14:39:18,840 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:39:30,354 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:30] "GET / HTTP/1.1" 200 -
+2025-03-19 14:39:31,491 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:31] "GET /add_entry HTTP/1.1" 200 -
+2025-03-19 14:39:38,445 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:38] "[35m[1mPOST /add_entry HTTP/1.1[0m" 500 -
+2025-03-19 14:39:38,799 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:38] "GET /add_entry?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-19 14:39:38,815 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:38] "GET /add_entry?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-19 14:39:38,894 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:38] "GET /add_entry?__debugger__=yes&cmd=resource&f=console.png&s=1k7iZrdsjG99Sxsw8dff HTTP/1.1" 200 -
+2025-03-19 14:39:38,922 [INFO] 127.0.0.1 - - [19/Mar/2025 14:39:38] "GET /add_entry?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-19 14:42:10,768 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\web_ui.py', reloading
+2025-03-19 14:42:10,985 [INFO]  * Restarting with stat
+2025-03-19 14:42:11,643 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:42:11,643 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:42:11,644 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:42:15,965 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:42:15,965 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:42:15,965 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:42:16,306 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:42:16,306 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:42:16,306 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:42:16,310 [INFO] BEGIN (implicit)
+2025-03-19 14:42:16,310 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:42:16,310 [INFO] [raw sql] ()
+2025-03-19 14:42:16,311 [INFO] COMMIT
+2025-03-19 14:42:16,347 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 14:42:16,347 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 14:42:16,348 [INFO]  * Restarting with stat
+2025-03-19 14:42:16,817 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:42:16,817 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:42:16,817 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:42:17,185 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:42:17,185 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:42:17,186 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:42:17,188 [INFO] BEGIN (implicit)
+2025-03-19 14:42:17,188 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:42:17,188 [INFO] [raw sql] ()
+2025-03-19 14:42:17,189 [INFO] COMMIT
+2025-03-19 14:42:17,212 [WARNING]  * Debugger is active!
+2025-03-19 14:42:17,235 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:42:20,825 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:20] "GET / HTTP/1.1" 200 -
+2025-03-19 14:42:22,061 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:22] "GET /add_entry HTTP/1.1" 200 -
+2025-03-19 14:42:27,707 [INFO] BEGIN (implicit)
+2025-03-19 14:42:27,708 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:42:27,709 [INFO] [generated in 0.00211s] ('f95811b4c75b447da932b61bc7dfe337', 'NASSIRI_MAROUAN_SaeJava', 5.0, 'a')
+2025-03-19 14:42:27,718 [INFO] COMMIT
+2025-03-19 14:42:27,727 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:27] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-19 14:42:27,734 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:27] "GET / HTTP/1.1" 200 -
+2025-03-19 14:42:36,883 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:36] "GET /update HTTP/1.1" 200 -
+2025-03-19 14:42:40,381 [INFO] BEGIN (implicit)
+2025-03-19 14:42:40,382 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile 
+WHERE profile.id = ?
+2025-03-19 14:42:40,383 [INFO] [generated in 0.00254s] ('f95811b4c75b447da932b61bc7dfe337',)
+2025-03-19 14:42:40,385 [INFO] ROLLBACK
+2025-03-19 14:42:40,390 [INFO] BEGIN (implicit)
+2025-03-19 14:42:40,391 [INFO] UPDATE profile SET name=?, amount=?, category=? WHERE profile.id = ?
+2025-03-19 14:42:40,391 [INFO] [generated in 0.00118s] ('mdr', 5.0, 'a', 'f95811b4c75b447da932b61bc7dfe337')
+2025-03-19 14:42:40,394 [INFO] COMMIT
+2025-03-19 14:42:40,401 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:40] "[32mPOST /update HTTP/1.1[0m" 302 -
+2025-03-19 14:42:40,411 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:40] "GET / HTTP/1.1" 200 -
+2025-03-19 14:42:45,609 [INFO] BEGIN (implicit)
+2025-03-19 14:42:45,610 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-03-19 14:42:45,610 [INFO] [generated in 0.00086s] ()
+2025-03-19 14:42:45,611 [INFO] ROLLBACK
+2025-03-19 14:42:45,614 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:45] "GET /export_csv HTTP/1.1" 200 -
+2025-03-19 14:42:47,449 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:47] "GET /import_csv HTTP/1.1" 200 -
+2025-03-19 14:42:53,895 [INFO] 127.0.0.1 - - [19/Mar/2025 14:42:53] "POST /import_csv HTTP/1.1" 200 -
+2025-03-19 14:43:08,703 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:08] "POST /import_csv HTTP/1.1" 200 -
+2025-03-19 14:43:13,865 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:13] "GET /delete HTTP/1.1" 200 -
+2025-03-19 14:43:15,748 [INFO] BEGIN (implicit)
+2025-03-19 14:43:15,749 [INFO] DELETE FROM profile WHERE profile.id = ?
+2025-03-19 14:43:15,749 [INFO] [generated in 0.00082s] ('f95811b4c75b447da932b61bc7dfe337',)
+2025-03-19 14:43:15,769 [INFO] COMMIT
+2025-03-19 14:43:15,777 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:15] "[32mPOST /delete HTTP/1.1[0m" 302 -
+2025-03-19 14:43:15,786 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:15] "GET / HTTP/1.1" 200 -

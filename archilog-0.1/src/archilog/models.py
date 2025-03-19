@@ -1,60 +1,81 @@
-from flask_sqlalchemy import SQLAlchemy
 import uuid
+from dataclasses import dataclass
+from archilog import config
+from sqlalchemy import create_engine, Column, String, Float, MetaData, Table, insert, update, delete
+from wtforms import StringField, FloatField, SelectField
+from wtforms.validators import DataRequired, Optional
 
+# Initialize global metadata
+metadata = MetaData()
 
-db = SQLAlchemy()  # Initialisation de db avec SQLAlchemy
+# Define the table
+profile_table = Table(
+    "profile",
+    metadata,
+    Column("id", String, primary_key=True),
+    Column("name", String),
+    Column("amount", Float),
+    Column("category", String, nullable=True),
+)
 
-def init_db(app):
-    """Fonction pour initialiser la base de données et créer les tables"""
-    with app.app_context():
-        db.create_all()  # Crée les tables dans la base de données si elles n'existent pas encore
+# Global engine for reuse
+engine = create_engine(config.DATABASE_URL, echo=config.DEBUG)
 
-class Entry(db.Model):
-    id = db.Column(db.String, primary_key=True, default=lambda: str(uuid.uuid4()))  # Génération automatique de l'ID
-    name = db.Column(db.String, nullable=False)
-    amount = db.Column(db.Float, nullable=False)
-    category = db.Column(db.String, nullable=True)
+# Function to create tables in the database
+def init_db():
+    metadata.create_all(engine)
 
-    def __init__(self, name, amount, category=None):
-        self.name = name
-        self.amount = amount
-        self.category = category
-# Fonction pour créer une entrée
-def create_entry(name: str, amount: float, category: str | None = None) -> None:
-    new_entry = Entry(name=name, amount=amount, category=category)
-    db.session.add(new_entry)
-    db.session.commit()
+@dataclass
+class Entry:
+    id: uuid.UUID
+    name: str
+    amount: float
+    category: str
 
-# Fonction pour obtenir une entrée par ID
+    @classmethod
+    def from_db(cls, id: str, name: str, amount: float, category: str):
+        # Ensure to convert id back to UUID
+        return cls(uuid.UUID(id), name, amount, category)
+
+def create_entry(name: str, amount: float, category: str) -> None:
+    new_entry = {
+        "id": uuid.uuid4().hex,
+        "name": name,
+        "amount": amount,
+        "category": category,
+    }
+    stmt = insert(profile_table).values(new_entry)
+    with engine.connect() as conn:
+        conn.execute(stmt)
+        conn.commit()
+
 def get_entry(id: uuid.UUID) -> Entry:
-    entry = Entry.query.get(str(id))  # Recherche par ID
-    if entry:
-        return entry
-    else:
-        raise Exception("Entry not found")
+    with engine.connect() as conn:
+        result = conn.execute(profile_table.select().where(profile_table.c.id == id.hex)).fetchone()
+        if result:
+            return Entry.from_db(*result)
+        else:
+            raise Exception("Entry not found")
 
-# Fonction pour obtenir toutes les entrées
 def get_all_entries() -> list[Entry]:
-    return Entry.query.all()  # Récupérer toutes les entrées
+    with engine.connect() as conn:
+        results = conn.execute(profile_table.select()).fetchall()
+        return [Entry.from_db(*r) for r in results]
 
-# Fonction pour mettre à jour une entrée
 def update_entry(id: uuid.UUID, name: str, amount: float, category: str | None) -> None:
-    entry = Entry.query.get(str(id))
-    if entry:
-        entry.name = name
-        entry.amount = amount
-        entry.category = category
-        db.session.commit()
-    else:
-        raise Exception("Entry not found")
+    stmt = (
+        update(profile_table)
+        .where(profile_table.c.id == id.hex)
+        .values(name=name, amount=amount, category=category)
+    )
+    with engine.connect() as conn:
+        conn.execute(stmt)
+        conn.commit()
 
-# Fonction pour supprimer une entrée
 def delete_entry(id: uuid.UUID) -> None:
-    entry = Entry.query.get(str(id))
-    if entry:
-        db.session.delete(entry)
-        db.session.commit()
-    else:
-        raise Exception("Entry not found")
+    stmt = delete(profile_table).where(profile_table.c.id == id.hex)
+    with engine.connect() as conn:
+        conn.execute(stmt)
+        conn.commit()
 
 

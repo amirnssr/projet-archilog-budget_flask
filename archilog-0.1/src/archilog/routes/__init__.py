@@ -1,34 +1,21 @@
 from flask import Flask
-from archilog import config
-from archilog.models import db, init_db  # Importation de db et init_db
-from archilog.routes.web_ui import web_ui_bp  # Importation du blueprint
-from archilog.error_handlers import register_error_handlers  # Importation du gestionnaire d'erreurs
-from dotenv import load_dotenv  # Importer load_dotenv pour charger les variables d'environnement
-import os
-
-# Charger les variables d'environnement depuis dev.env
-load_dotenv(dotenv_path='dev.env')  # Charge le fichier dev.env où les variables sont définies
+from archilog.routes.web_ui import web_ui_bp
+from archilog.routes.error_handlers import register_error_handlers
+from archilog.models import init_db
+from archilog.__init__ import config  # Assure-toi d'importer la bonne config
 
 def create_app():
     # Création de l'instance de l'application Flask
     app = Flask(__name__)
+    app.config['SECRET_KEY'] = config.SECRET_KEY 
 
-    # Configuration de la base de données
-    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('ARCHILOG_DATABASE_URL', 'sqlite:///data.db')  # Utilisation de la variable d'environnement
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = os.getenv('ARCHILOG_DEBUG', 'False') == 'True'  # Convertir en booléen
-    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'une_super_cle_secrete')  # Utiliser la variable d'environnement
-
+    # 🔹 Enregistrer les handlers d'erreur
+    register_error_handlers(app)  
+    
     # Initialisation de la base de données
-    db.init_app(app)  # Initialiser db avec l'application Flask
-
-    # Créer les tables si elles n'existent pas
-    with app.app_context():
-        db.create_all()  # Crée toutes les tables dans la base de données
-
-    # Enregistrer les handlers d'erreur
-    register_error_handlers(app)
+    init_db()
 
     # Enregistrement des blueprints
-    app.register_blueprint(web_ui_bp)  # Enregistrement du blueprint web_ui
+    app.register_blueprint(web_ui_bp)
 
     return app
