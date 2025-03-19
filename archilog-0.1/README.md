@@ -17,7 +17,7 @@ $ python -m pdm run flask --app archilog.routes routes
 $ python -m pdm run archilog create --name "Alice" --amount 200 --category "Finance"
 $ python -m pdm build
 $ python -m pdm run start
-
+$ python -m pdm add flask-httpauth
 
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...

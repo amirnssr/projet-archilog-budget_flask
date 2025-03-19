@@ -1772,3 +1772,36 @@ CREATE TABLE profile (
 2025-03-19 13:16:23,459 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
 2025-03-19 13:16:23,460 [DEBUG] Valeur de DEBUG après conversion : False
 2025-03-19 13:16:23,460 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:21:37,178 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:21:37,178 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:21:37,178 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:21:37,859 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:21:37,859 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:21:37,862 [INFO]  * Restarting with stat
+2025-03-19 13:21:38,414 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:21:38,414 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:21:38,414 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:21:38,924 [WARNING]  * Debugger is active!
+2025-03-19 13:21:38,935 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:21:42,961 [INFO] 127.0.0.1 - - [19/Mar/2025 13:21:42] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:31,296 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:22:31,296 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:22:31,296 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:22:31,765 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 13:22:31,766 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 13:22:31,768 [INFO]  * Restarting with stat
+2025-03-19 13:22:32,279 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 13:22:32,279 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 13:22:32,279 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 13:22:32,834 [WARNING]  * Debugger is active!
+2025-03-19 13:22:32,850 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 13:22:34,110 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:34] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:34,575 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:34] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:34,763 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:34] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:34,942 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:34] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:35,119 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:35,320 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:35,533 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:22:35,716 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
