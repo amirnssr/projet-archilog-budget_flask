@@ -85,7 +85,8 @@ def import_csv():
         else:
             try:
                 import io
-                stream = io.StringIO(file.stream.read().decode("utf-8"))
+                # Convertir le fichier téléchargé en un flux utilisable par la fonction import_from_csv
+                stream = io.BytesIO(file.read())
                 import_from_csv(stream)  # Fonction qui gère l'importation du CSV
                 flash("Importation réussie", "success")
                 return redirect(url_for('web_ui.index'))  # Redirige vers la page d'accueil après l'importation

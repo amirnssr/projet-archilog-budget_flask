@@ -4,28 +4,30 @@ from archilog.models import Entry
 from archilog.models import create_entry
 from archilog.models import get_all_entries
 
+import csv
+import io
+from archilog.services import create_entry  # Assurez-vous que create_entry est défini pour insérer dans la DB
+
 def import_from_csv(csv_file: io.BytesIO) -> None:
     """Importer des entrées depuis un fichier CSV"""
-    # Ouvrir le fichier CSV et le lire ligne par ligne
-    csv_reader = csv.DictReader(
-        io.TextIOWrapper(csv_file, encoding='utf-8'),  # Utiliser TextIOWrapper pour lire le fichier en texte
-        fieldnames=["name", "amount", "category"]
-    )
-
-    next(csv_reader)  # Ignorer la première ligne (les en-têtes)
-
-    # Lire chaque ligne du fichier CSV et insérer dans la base de données
-    for row in csv_reader:
-        try:
-            create_entry(
-                name=row["name"],
-                amount=float(row["amount"]),  # Convertir la chaîne en float
-                category=row["category"]
-            )
-        except ValueError:
-            # Si une erreur de format survient (par exemple, une valeur non convertible en float)
-            print(f"Erreur de format dans la ligne: {row}")
-
+    try:
+        csv_reader = csv.DictReader(io.TextIOWrapper(csv_file, encoding='utf-8'))
+        
+        for row in csv_reader:
+            name = row.get("name")
+            amount = row.get("amount")
+            category = row.get("category")
+            
+            if name and amount:  # Assurez-vous que les valeurs sont valides
+                try:
+                    amount = float(amount)  # Convertir le montant en float
+                    create_entry(name, amount, category)  # Appeler la fonction pour insérer dans la base
+                except ValueError:
+                    print(f"Erreur : Montant invalide pour {row}")
+            else:
+                print(f"Erreur : Ligne invalide dans le CSV {row}")
+    except Exception as e:
+        print(f"Erreur lors de l'importation du CSV : {str(e)}")
 
 def export_to_csv() -> io.StringIO:
     output = io.StringIO()

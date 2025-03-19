@@ -2034,3 +2034,140 @@ FROM profile
 2025-03-19 14:43:15,769 [INFO] COMMIT
 2025-03-19 14:43:15,777 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:15] "[32mPOST /delete HTTP/1.1[0m" 302 -
 2025-03-19 14:43:15,786 [INFO] 127.0.0.1 - - [19/Mar/2025 14:43:15] "GET / HTTP/1.1" 200 -
+2025-03-19 14:49:29,219 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:49:29,220 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:49:29,220 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:49:29,637 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:49:29,637 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:49:29,637 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:49:29,640 [INFO] BEGIN (implicit)
+2025-03-19 14:49:29,641 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:49:29,641 [INFO] [raw sql] ()
+2025-03-19 14:49:29,646 [INFO] COMMIT
+2025-03-19 14:49:29,697 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 14:49:29,697 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 14:49:29,699 [INFO]  * Restarting with stat
+2025-03-19 14:49:30,121 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:49:30,122 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:49:30,122 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:49:30,438 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:49:30,438 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:49:30,438 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:49:30,440 [INFO] BEGIN (implicit)
+2025-03-19 14:49:30,440 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:49:30,440 [INFO] [raw sql] ()
+2025-03-19 14:49:30,441 [INFO] COMMIT
+2025-03-19 14:49:30,462 [WARNING]  * Debugger is active!
+2025-03-19 14:49:30,469 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:49:32,707 [INFO] 127.0.0.1 - - [19/Mar/2025 14:49:32] "GET / HTTP/1.1" 200 -
+2025-03-19 14:49:33,909 [INFO] 127.0.0.1 - - [19/Mar/2025 14:49:33] "GET /import_csv HTTP/1.1" 200 -
+2025-03-19 14:49:48,357 [INFO] 127.0.0.1 - - [19/Mar/2025 14:49:48] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-19 14:49:48,364 [INFO] 127.0.0.1 - - [19/Mar/2025 14:49:48] "GET / HTTP/1.1" 200 -
+2025-03-19 14:49:55,879 [INFO] 127.0.0.1 - - [19/Mar/2025 14:49:55] "GET /import_csv HTTP/1.1" 200 -
+2025-03-19 14:50:07,736 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:07] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-19 14:50:07,744 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:07] "GET / HTTP/1.1" 200 -
+2025-03-19 14:50:40,478 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:40] "GET /add_entry HTTP/1.1" 200 -
+2025-03-19 14:50:43,784 [INFO] BEGIN (implicit)
+2025-03-19 14:50:43,785 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:50:43,786 [INFO] [generated in 0.00145s] ('3388d3064e4f4334baa6e5da32098985', 'testindex', 14.0, '')
+2025-03-19 14:50:43,789 [INFO] COMMIT
+2025-03-19 14:50:43,798 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:43] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-03-19 14:50:43,807 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:43] "GET / HTTP/1.1" 200 -
+2025-03-19 14:50:48,113 [INFO] BEGIN (implicit)
+2025-03-19 14:50:48,114 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-03-19 14:50:48,114 [INFO] [generated in 0.00102s] ()
+2025-03-19 14:50:48,115 [INFO] ROLLBACK
+2025-03-19 14:50:48,119 [INFO] 127.0.0.1 - - [19/Mar/2025 14:50:48] "GET /export_csv HTTP/1.1" 200 -
+2025-03-19 14:51:07,196 [INFO] 127.0.0.1 - - [19/Mar/2025 14:51:07] "GET /import_csv HTTP/1.1" 200 -
+2025-03-19 14:51:12,377 [INFO] 127.0.0.1 - - [19/Mar/2025 14:51:12] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-19 14:51:12,391 [INFO] 127.0.0.1 - - [19/Mar/2025 14:51:12] "GET / HTTP/1.1" 200 -
+2025-03-19 14:54:53,110 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\services.py', reloading
+2025-03-19 14:54:53,351 [INFO]  * Restarting with stat
+2025-03-19 14:54:54,059 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:54:54,059 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:54:54,059 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:54:54,524 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:54:54,524 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:54:54,524 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:54:54,527 [INFO] BEGIN (implicit)
+2025-03-19 14:54:54,527 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:54:54,527 [INFO] [raw sql] ()
+2025-03-19 14:54:54,529 [INFO] COMMIT
+2025-03-19 14:54:54,557 [WARNING]  * Debugger is active!
+2025-03-19 14:54:54,566 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:55:00,000 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:55:00,001 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:55:00,001 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:55:00,579 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:55:00,579 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:55:00,579 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:55:00,583 [INFO] BEGIN (implicit)
+2025-03-19 14:55:00,583 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:55:00,583 [INFO] [raw sql] ()
+2025-03-19 14:55:00,584 [INFO] COMMIT
+2025-03-19 14:55:00,622 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-19 14:55:00,623 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-19 14:55:00,624 [INFO]  * Restarting with stat
+2025-03-19 14:55:01,101 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:55:01,101 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:55:01,101 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:55:01,463 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-03-19 14:55:01,464 [DEBUG] Valeur de DEBUG après conversion : False
+2025-03-19 14:55:01,464 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-03-19 14:55:01,468 [INFO] BEGIN (implicit)
+2025-03-19 14:55:01,468 [INFO] PRAGMA main.table_info("profile")
+2025-03-19 14:55:01,468 [INFO] [raw sql] ()
+2025-03-19 14:55:01,469 [INFO] COMMIT
+2025-03-19 14:55:01,493 [WARNING]  * Debugger is active!
+2025-03-19 14:55:01,501 [INFO]  * Debugger PIN: 660-684-526
+2025-03-19 14:55:02,962 [INFO] 127.0.0.1 - - [19/Mar/2025 14:55:02] "GET / HTTP/1.1" 200 -
+2025-03-19 14:55:04,893 [INFO] 127.0.0.1 - - [19/Mar/2025 14:55:04] "GET /import_csv HTTP/1.1" 200 -
+2025-03-19 14:55:10,955 [INFO] BEGIN (implicit)
+2025-03-19 14:55:10,957 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:10,957 [INFO] [generated in 0.00081s] ('1db319955aa84cb191b7584bd02adfa2', 'vzyfrr', 8.0, '1')
+2025-03-19 14:55:10,973 [INFO] COMMIT
+2025-03-19 14:55:10,990 [INFO] BEGIN (implicit)
+2025-03-19 14:55:10,990 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:10,990 [INFO] [cached since 0.03461s ago] ('681d24ec32264597b94ba3c9b288a71a', 'yohann', 200.0, 'Finance')
+2025-03-19 14:55:10,993 [INFO] COMMIT
+2025-03-19 14:55:11,000 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,001 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,001 [INFO] [cached since 0.04539s ago] ('7fe80c2c666c4693a6396ba78dc455e3', 'src', 200.0, 'Finance')
+2025-03-19 14:55:11,005 [INFO] COMMIT
+2025-03-19 14:55:11,012 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,012 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,012 [INFO] [cached since 0.05634s ago] ('fb8028f8194d4aa3b15cb7061a038396', 'update', 777.0, 'ah')
+2025-03-19 14:55:11,014 [INFO] COMMIT
+2025-03-19 14:55:11,021 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,021 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,021 [INFO] [cached since 0.06576s ago] ('d34c0a067f7b4176b32c6ca8832f6a6f', 'testdupdate!!!', 1.0, 'ok')
+2025-03-19 14:55:11,024 [INFO] COMMIT
+2025-03-19 14:55:11,030 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,031 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,031 [INFO] [cached since 0.07516s ago] ('5866bd367c474c65a675b4c6b25acf78', 'vincent', 1.0, 'pasCarré')
+2025-03-19 14:55:11,034 [INFO] COMMIT
+2025-03-19 14:55:11,041 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,041 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,041 [INFO] [cached since 0.0859s ago] ('38c4597ce69a4036985684dd3fa4f090', 'src', 200.0, 'Finance')
+2025-03-19 14:55:11,044 [INFO] COMMIT
+2025-03-19 14:55:11,051 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,051 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,051 [INFO] [cached since 0.09607s ago] ('dfbfdc57a9244b2b936161aad33d7cb1', 'update', 777.0, 'ah')
+2025-03-19 14:55:11,055 [INFO] COMMIT
+2025-03-19 14:55:11,062 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,062 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,062 [INFO] [cached since 0.1061s ago] ('93a8ccd19c424ab086c951ed5e7479eb', 'wxc', 4.0, 'h')
+2025-03-19 14:55:11,064 [INFO] COMMIT
+2025-03-19 14:55:11,071 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,071 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,071 [INFO] [cached since 0.1163s ago] ('6c6a0ed0369a40de859dbf2f08cf3f9b', 'vincent', 1.0, 'pasCarré')
+2025-03-19 14:55:11,075 [INFO] COMMIT
+2025-03-19 14:55:11,082 [INFO] BEGIN (implicit)
+2025-03-19 14:55:11,082 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-03-19 14:55:11,082 [INFO] [cached since 0.127s ago] ('c543d1e374d44b9bb0e9283634f82681', 'azr', 7.0, 'qsd')
+2025-03-19 14:55:11,086 [INFO] COMMIT
+2025-03-19 14:55:11,093 [INFO] 127.0.0.1 - - [19/Mar/2025 14:55:11] "[32mPOST /import_csv HTTP/1.1[0m" 302 -
+2025-03-19 14:55:11,106 [INFO] 127.0.0.1 - - [19/Mar/2025 14:55:11] "GET / HTTP/1.1" 200 -
