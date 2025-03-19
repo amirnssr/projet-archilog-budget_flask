@@ -1,5 +1,3 @@
-# app.py (ou __init__.py)
-
 from flask import Flask
 from archilog import config
 from archilog.models import db, init_db  # Importation de db et init_db

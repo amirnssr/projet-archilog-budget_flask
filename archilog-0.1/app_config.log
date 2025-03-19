@@ -1805,3 +1805,4 @@ CREATE TABLE profile (
 2025-03-19 13:22:35,320 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
 2025-03-19 13:22:35,533 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
 2025-03-19 13:22:35,716 [INFO] 127.0.0.1 - - [19/Mar/2025 13:22:35] "[33mGET /testerror HTTP/1.1[0m" 404 -
+2025-03-19 13:29:31,265 [INFO]  * Detected change in 'C:\\archi\\archilogtp\\archilog-0.1\\src\\archilog\\routes\\__init__.py', reloading
