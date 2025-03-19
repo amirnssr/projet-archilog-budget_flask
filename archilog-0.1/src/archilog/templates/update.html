@@ -3,13 +3,11 @@
 {% block title %}Mettre à jour une entrée{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style') }}">
-
 <h2>Mettre à jour une entrée</h2>
 
 <form method="POST">
     {{ form.hidden_tag() }}  <!-- Protection CSRF -->
-
+    
     <div>
         <label for="entry_id">{{ form.entry_id.label }}</label>
         {{ form.entry_id(class="form-control", id="entry_id") }}
@@ -17,9 +15,9 @@
             <small class="text-danger">{{ error }}</small>
         {% endfor %}
     </div>
-
+    
     <br>
-
+    
     <div>
         <label for="name">{{ form.name.label }}</label>
         {{ form.name(class="form-control", id="name") }}
@@ -27,9 +25,9 @@
             <small class="text-danger">{{ error }}</small>
         {% endfor %}
     </div>
-
+    
     <br>
-
+    
     <div>
         <label for="amount">{{ form.amount.label }}</label>
         {{ form.amount(class="form-control", id="amount", step="0.01") }}
@@ -37,9 +35,9 @@
             <small class="text-danger">{{ error }}</small>
         {% endfor %}
     </div>
-
+    
     <br>
-
+    
     <div>
         <label for="category">{{ form.category.label }}</label>
         {{ form.category(class="form-control", id="category") }}
@@ -47,9 +45,9 @@
             <small class="text-danger">{{ error }}</small>
         {% endfor %}
     </div>
-
+    
     <br>
-
+    
     <button type="submit" class="btn btn-success">{{ form.submit.label }}</button>
 </form>
 
@@ -57,5 +55,4 @@
 
 <!-- Bouton pour revenir à l'index -->
 <a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>
-
 {% endblock %}

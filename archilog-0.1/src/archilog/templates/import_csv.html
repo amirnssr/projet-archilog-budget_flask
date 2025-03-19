@@ -3,7 +3,68 @@
 {% block title %}Importer un fichier CSV{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+    /* CSS intégré directement dans le template */
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-primary:hover {
+        background-color: #0069d9;
+    }
+
+    h2 {
+        color: #343a40;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 15px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
 
 <h2>Importer un fichier CSV</h2>
 
@@ -17,11 +78,9 @@
         <button type="submit" class="btn btn-primary">Importer</button>
     </div>
 </form>
-
-
+ 
 <br>
 
 <!-- Bouton pour revenir à l'index -->
 <a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>
-
 {% endblock %}
