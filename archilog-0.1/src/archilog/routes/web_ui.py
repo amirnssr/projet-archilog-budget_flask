@@ -1,25 +1,54 @@
 import uuid
 from flask import Blueprint, render_template, request, redirect, url_for, Response, flash
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
 import archilog.models as models
 import archilog.services as services
-from archilog.forms import  DeleteForm, UpdateForm, ImportCSVForm, EntryForm
-from archilog.models import Entry 
+from archilog.forms import DeleteForm, UpdateForm, ImportCSVForm, EntryForm
+from archilog.models import Entry
 from archilog.services import import_from_csv
 
+# Configuration de l'authentification HTTP
+auth = HTTPBasicAuth()
+
+# Utilisateurs et mots de passe hachés
+users = {
+    "admin": generate_password_hash("adminpassword"),  # Admin
+    "user": generate_password_hash("userpassword")     # Utilisateur normal
+}
+
+# Rôles des utilisateurs
+roles = {
+    "admin": "admin",  # Admin a accès à tout
+    "user": "user"     # Utilisateur normal a un accès limité
+}
+
+# Vérification du mot de passe
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
+
+# Récupération des rôles pour chaque utilisateur
+@auth.get_user_roles
+def get_user_roles(username):
+    return roles.get(username, "user")  # Par défaut, le rôle est "user" si non spécifié
+
+# Initialisation du Blueprint
 web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
 
-
-
 @web_ui_bp.route("/")
+@auth.login_required
 def index():
     return render_template("index.html")
 
 
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
+@auth.login_required(role="admin")  # Cette route est réservée aux admins
 def add_entry():
-    form = EntryForm()  # Créer une instance du formulaire
-    
-    if form.validate_on_submit():  # Vérifier si le formulaire a été soumis et est valide
+    form = EntryForm()
+
+    if form.validate_on_submit():
         name = form.name.data
         amount = form.amount.data
         category = form.category.data
@@ -27,13 +56,15 @@ def add_entry():
         try:
             models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
             flash("Entrée ajoutée avec succès !", "success")
-            return redirect(url_for("web_ui.index"))  # Redirection vers l'index après ajout
+            return redirect(url_for("web_ui.index"))
         except ValueError:
             flash("Erreur : Valeur du montant invalide", "danger")
 
-    return render_template("home.html", form=form)  # Passer le formulaire à la vue
+    return render_template("home.html", form=form)
+
 
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
+@auth.login_required(role="admin")  # Cette route est réservée aux admins
 def delete():
     form = DeleteForm()
     if form.validate_on_submit():
@@ -48,8 +79,8 @@ def delete():
     return render_template("delete.html", form=form)
 
 
-
 @web_ui_bp.route("/update", methods=["GET", "POST"])
+@auth.login_required(role="admin")  # Cette route est réservée aux admins
 def update():
     form = UpdateForm()
     if form.validate_on_submit():
@@ -74,28 +105,31 @@ def update():
 
 
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
+@auth.login_required(role="admin")  # Cette route est réservée aux admins
 def import_csv():
-    form = ImportCSVForm()  # Assurez-vous que ImportCSVForm est correctement défini
+    form = ImportCSVForm()
 
     if form.validate_on_submit():
         file = request.files["file"]
 
-        if file.filename == "":  # Vérifiez que le fichier est bien sélectionné
+        if file.filename == "":
             flash("Erreur : Aucun fichier sélectionné", "danger")
         else:
             try:
                 import io
                 # Convertir le fichier téléchargé en un flux utilisable par la fonction import_from_csv
                 stream = io.BytesIO(file.read())
-                import_from_csv(stream)  # Fonction qui gère l'importation du CSV
+                import_from_csv(stream)
                 flash("Importation réussie", "success")
-                return redirect(url_for('web_ui.index'))  # Redirige vers la page d'accueil après l'importation
+                return redirect(url_for('web_ui.index'))
             except Exception as e:
                 flash(f"Erreur lors de l'importation : {str(e)}", "danger")
 
     return render_template("import_csv.html", form=form)
 
+
 @web_ui_bp.route("/export_csv")
+@auth.login_required(role=["user", "admin"])  # Autoriser l'accès aux utilisateurs et aux admins
 def export_csv():
     try:
         csv_output = services.export_to_csv()  # Appelle la fonction d'exportation

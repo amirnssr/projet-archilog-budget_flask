@@ -18,6 +18,8 @@ $ python -m pdm run archilog create --name "Alice" --amount 200 --category "Fina
 $ python -m pdm build
 $ python -m pdm run start
 $ python -m pdm add flask-httpauth
+$ http://admin:wrongpassword@localhost:5000/
+
 
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...
