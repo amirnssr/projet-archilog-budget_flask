@@ -6,7 +6,7 @@ import archilog.services as services
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
-from archilog.forms import *  
+from web_ui import EntryForm, UpdateForm, DeleteForm, ImportCSVForm
 
 
 app = Flask(__name__)

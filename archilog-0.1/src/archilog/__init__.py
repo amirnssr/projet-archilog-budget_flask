@@ -9,12 +9,12 @@ load_dotenv()
 class Config:
     DATABASE_URL: str
     DEBUG: bool
-    SECRET_KEY: str  # ✅ Ajout de SECRET_KEY
+    SECRET_KEY: str 
 
 config = Config(
     DATABASE_URL=os.getenv("ARCHILOG_DATABASE_URL", 'sqlite:////data.db'),
     DEBUG=os.getenv("ARCHILOG_DEBUG", "False") == "True",
-    SECRET_KEY=os.getenv("SECRET_KEY", "dev-secret-key")  # ✅ Définition de SECRET_KEY
+    SECRET_KEY=os.getenv("SECRET_KEY", "dev-secret-key")  
 )
 
 

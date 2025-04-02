@@ -1,0 +1,24 @@
+2025-04-02 13:03:21,984 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-02 13:03:21,984 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-02 13:03:21,984 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-02 13:03:26,584 [INFO] BEGIN (implicit)
+2025-04-02 13:03:26,584 [INFO] PRAGMA main.table_info("profile")
+2025-04-02 13:03:26,585 [INFO] [raw sql] ()
+2025-04-02 13:03:26,588 [INFO] PRAGMA temp.table_info("profile")
+2025-04-02 13:03:26,588 [INFO] [raw sql] ()
+2025-04-02 13:03:26,589 [INFO] 
+CREATE TABLE profile (
+	id VARCHAR NOT NULL, 
+	name VARCHAR, 
+	amount FLOAT, 
+	category VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2025-04-02 13:03:26,590 [INFO] [no key 0.00027s] ()
+2025-04-02 13:03:26,598 [INFO] COMMIT
+2025-04-02 13:03:26,607 [INFO] BEGIN (implicit)
+2025-04-02 13:03:26,607 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-02 13:03:26,608 [INFO] [generated in 0.00049s] ('764da4d5a77b4423855468d272b535d0', 'Alice', 200.0, 'Finance')
+2025-04-02 13:03:26,609 [INFO] COMMIT

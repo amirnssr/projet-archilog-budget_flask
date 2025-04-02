@@ -19,7 +19,9 @@ $ python -m pdm build
 $ python -m pdm run start
 $ python -m pdm add flask-httpauth
 $ http://admin:wrongpassword@localhost:5000/
-
+$ python -m pdm add spectree
+$ python -m pdm add flask flask-httpauth pydantic spectree
+$ python -m pdm add flask-jwt-extended
 
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...

@@ -11,6 +11,9 @@ dependencies = [
     "flask-wtf>=1.2.2",
     "wtf>=0.1",
     "flask-httpauth>=4.8.0",
+    "spectree>=1.4.5",
+    "pydantic>=2.10.6",
+    "flask-jwt-extended>=4.7.1",
 ]
 requires-python = ">=3.10"
 
@@ -18,7 +21,7 @@ requires-python = ">=3.10"
 text = "MIT"
 
 [project.scripts]
-archilog = "archilog.views:cli"
+archilog = "archilog.views.cmd:cli"
 
 [build-system]
 requires = [
@@ -28,4 +31,4 @@ build-backend = "pdm.backend"
 
 [tool.pdm.scripts]
 _.env_file = "dev.env"
-start = "flask --app archilog.routes --debug run"
+start = "flask --app archilog.views --debug run"
