@@ -6,8 +6,6 @@ import archilog.models as models
 import archilog.services as services
 from archilog.models import Entry
 from archilog.services import import_from_csv
-
-
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField, FileField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
@@ -181,16 +179,7 @@ class ImportCSVForm(FlaskForm):
     submit = SubmitField('Importer')
     
     
-# error_handler.py
-
 def register_error_handlers(app):
-    # Handler pour les erreurs 404
     @app.errorhandler(404)
     def page_not_found(error):
-        return 'Page non trouvée', 404
-
-    # Handler pour les erreurs internes du serveur
-    @app.errorhandler(500)
-    def internal_server_error(error):
-        return 'Erreur interne du serveur', 500
-#une errer 500 en json pour l api a ajouter
+        return render_template('404.html'), 404

@@ -22,7 +22,7 @@ $ http://admin:wrongpassword@localhost:5000/
 $ python -m pdm add spectree
 $ python -m pdm add flask flask-httpauth pydantic spectree
 $ python -m pdm add flask-jwt-extended
-
+http://127.0.0.1:5000/apidoc/swagger/
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...
 

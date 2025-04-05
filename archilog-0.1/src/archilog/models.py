@@ -48,7 +48,7 @@ def create_entry(name: str, amount: float, category: str) -> None:
     with engine.connect() as conn:
         conn.execute(stmt)
         conn.commit()
-
+    return new_entry
 def get_entry(id: uuid.UUID) -> Entry:
     with engine.connect() as conn:
         result = conn.execute(profile_table.select().where(profile_table.c.id == id.hex)).fetchone()
