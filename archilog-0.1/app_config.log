@@ -1,15 +1,35 @@
-2025-04-09 10:55:30,381 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
-2025-04-09 10:55:30,381 [DEBUG] Valeur de DEBUG après conversion : False
-2025-04-09 10:55:30,381 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
-2025-04-09 10:55:33,559 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
-2025-04-09 10:55:33,559 [DEBUG] Valeur de DEBUG après conversion : False
-2025-04-09 10:55:33,559 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
-2025-04-09 10:55:34,991 [INFO] BEGIN (implicit)
-2025-04-09 10:55:34,992 [INFO] PRAGMA main.table_info("profile")
-2025-04-09 10:55:34,992 [INFO] [raw sql] ()
-2025-04-09 10:55:34,996 [INFO] PRAGMA temp.table_info("profile")
-2025-04-09 10:55:34,997 [INFO] [raw sql] ()
-2025-04-09 10:55:34,998 [INFO] 
+2025-04-09 13:25:47,361 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:25:47,362 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:25:47,362 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:25:48,361 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:25:48,361 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:25:48,361 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:25:48,625 [INFO] BEGIN (implicit)
+2025-04-09 13:25:48,625 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-09 13:25:48,625 [INFO] [generated in 0.00058s] ('c55f923f2c9940ba89be72fb39bffef7', 'Alice', 200.0, 'Finance')
+2025-04-09 13:25:48,626 [INFO] ROLLBACK
+2025-04-09 13:26:06,997 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:06,998 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:06,998 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:07,993 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:07,993 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:07,993 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:08,228 [INFO] BEGIN (implicit)
+2025-04-09 13:26:08,228 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-09 13:26:08,229 [INFO] [generated in 0.00060s] ('497e63c462ab475c9a35478aa86070af', 'Alice', 200.0, 'Finance')
+2025-04-09 13:26:08,229 [INFO] ROLLBACK
+2025-04-09 13:26:20,516 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:20,516 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:20,516 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:21,252 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:21,252 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:21,252 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:21,472 [INFO] BEGIN (implicit)
+2025-04-09 13:26:21,473 [INFO] PRAGMA main.table_info("profile")
+2025-04-09 13:26:21,473 [INFO] [raw sql] ()
+2025-04-09 13:26:21,475 [INFO] PRAGMA temp.table_info("profile")
+2025-04-09 13:26:21,475 [INFO] [raw sql] ()
+2025-04-09 13:26:21,476 [INFO] 
 CREATE TABLE profile (
 	id VARCHAR NOT NULL, 
 	name VARCHAR, 
@@ -19,48 +39,91 @@ CREATE TABLE profile (
 )
 
 
-2025-04-09 10:55:34,998 [INFO] [no key 0.00026s] ()
-2025-04-09 10:55:35,006 [INFO] COMMIT
-2025-04-09 10:55:35,012 [INFO] BEGIN (implicit)
-2025-04-09 10:55:35,012 [INFO] PRAGMA main.table_info("profile")
-2025-04-09 10:55:35,012 [INFO] [raw sql] ()
-2025-04-09 10:55:35,014 [INFO] COMMIT
-2025-04-09 10:55:35,188 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-04-09 13:26:21,476 [INFO] [no key 0.00026s] ()
+2025-04-09 13:26:21,496 [INFO] COMMIT
+2025-04-09 13:26:21,537 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-04-09 10:55:35,188 [INFO] [33mPress CTRL+C to quit[0m
-2025-04-09 10:55:35,200 [INFO]  * Restarting with stat
-2025-04-09 10:55:35,704 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
-2025-04-09 10:55:35,704 [DEBUG] Valeur de DEBUG après conversion : False
-2025-04-09 10:55:35,704 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
-2025-04-09 10:55:36,463 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
-2025-04-09 10:55:36,464 [DEBUG] Valeur de DEBUG après conversion : False
-2025-04-09 10:55:36,464 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
-2025-04-09 10:55:36,687 [INFO] BEGIN (implicit)
-2025-04-09 10:55:36,688 [INFO] PRAGMA main.table_info("profile")
-2025-04-09 10:55:36,688 [INFO] [raw sql] ()
-2025-04-09 10:55:36,690 [INFO] COMMIT
-2025-04-09 10:55:36,696 [INFO] BEGIN (implicit)
-2025-04-09 10:55:36,697 [INFO] PRAGMA main.table_info("profile")
-2025-04-09 10:55:36,697 [INFO] [raw sql] ()
-2025-04-09 10:55:36,698 [INFO] COMMIT
-2025-04-09 10:55:36,722 [WARNING]  * Debugger is active!
-2025-04-09 10:55:36,744 [INFO]  * Debugger PIN: 136-885-017
-2025-04-09 10:55:48,275 [INFO] 127.0.0.1 - - [09/Apr/2025 10:55:48] "[31m[1mGET / HTTP/1.1[0m" 401 -
-2025-04-09 10:56:10,442 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:10] "GET / HTTP/1.1" 200 -
-2025-04-09 10:56:10,522 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2025-04-09 10:56:11,991 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:11] "GET /add_entry HTTP/1.1" 200 -
-2025-04-09 10:56:19,116 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:19] "POST /add_entry HTTP/1.1" 200 -
-2025-04-09 10:56:32,835 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:32] "GET /add_entry HTTP/1.1" 200 -
-2025-04-09 10:56:38,458 [INFO] BEGIN (implicit)
-2025-04-09 10:56:38,458 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
-2025-04-09 10:56:38,459 [INFO] [generated in 0.00132s] ('60ffc39bc29c4d16a77263be3be89bf7', 'testindex', 7.0, '')
-2025-04-09 10:56:38,461 [INFO] COMMIT
-2025-04-09 10:56:38,469 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:38] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
-2025-04-09 10:56:38,714 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:38] "GET / HTTP/1.1" 200 -
-2025-04-09 10:56:40,444 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:40] "GET /add_entry HTTP/1.1" 200 -
-2025-04-09 10:56:45,458 [INFO] BEGIN (implicit)
-2025-04-09 10:56:45,458 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
-2025-04-09 10:56:45,458 [INFO] [cached since 7.001s ago] ('0e67e3804c23499ea20ecd01445f59a0', 'uj', 53.0, 'hn')
-2025-04-09 10:56:45,462 [INFO] COMMIT
-2025-04-09 10:56:45,467 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:45] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
-2025-04-09 10:56:45,693 [INFO] 127.0.0.1 - - [09/Apr/2025 10:56:45] "GET / HTTP/1.1" 200 -
+2025-04-09 13:26:21,539 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-09 13:26:21,540 [INFO]  * Restarting with stat
+2025-04-09 13:26:22,027 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:22,027 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:22,027 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:22,771 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:26:22,771 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:26:22,772 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:26:23,039 [INFO] BEGIN (implicit)
+2025-04-09 13:26:23,039 [INFO] PRAGMA main.table_info("profile")
+2025-04-09 13:26:23,040 [INFO] [raw sql] ()
+2025-04-09 13:26:23,041 [INFO] COMMIT
+2025-04-09 13:26:23,069 [WARNING]  * Debugger is active!
+2025-04-09 13:26:23,077 [INFO]  * Debugger PIN: 136-885-017
+2025-04-09 13:26:37,776 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:37] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-09 13:26:44,446 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:44] "GET / HTTP/1.1" 200 -
+2025-04-09 13:26:44,533 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-09 13:26:45,730 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:45] "GET /add_entry HTTP/1.1" 200 -
+2025-04-09 13:26:49,105 [INFO] BEGIN (implicit)
+2025-04-09 13:26:49,105 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-09 13:26:49,106 [INFO] [generated in 0.00096s] ('f21b0eed2ddb46a881c5cda05adfe085', 'dsqf', 7.0, '')
+2025-04-09 13:26:49,107 [INFO] COMMIT
+2025-04-09 13:26:49,116 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:49] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-04-09 13:26:49,411 [INFO] 127.0.0.1 - - [09/Apr/2025 13:26:49] "GET / HTTP/1.1" 200 -
+2025-04-09 13:27:10,652 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:10,653 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:10,653 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:11,689 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:11,690 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:11,690 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:11,919 [INFO] BEGIN (implicit)
+2025-04-09 13:27:11,919 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-09 13:27:11,919 [INFO] [generated in 0.00055s] ('cafb75b8dde64d5f93b0289c5f366726', 'Alice', 200.0, 'Finance')
+2025-04-09 13:27:11,935 [INFO] COMMIT
+2025-04-09 13:27:45,557 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:45,558 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:45,558 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:46,366 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:46,366 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:46,367 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:46,615 [INFO] BEGIN (implicit)
+2025-04-09 13:27:46,615 [INFO] PRAGMA main.table_info("profile")
+2025-04-09 13:27:46,615 [INFO] [raw sql] ()
+2025-04-09 13:27:46,617 [INFO] COMMIT
+2025-04-09 13:27:46,667 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-09 13:27:46,667 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-09 13:27:46,669 [INFO]  * Restarting with stat
+2025-04-09 13:27:47,194 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:47,194 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:47,194 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:47,973 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-09 13:27:47,974 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-09 13:27:47,974 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-09 13:27:48,354 [INFO] BEGIN (implicit)
+2025-04-09 13:27:48,355 [INFO] PRAGMA main.table_info("profile")
+2025-04-09 13:27:48,355 [INFO] [raw sql] ()
+2025-04-09 13:27:48,356 [INFO] COMMIT
+2025-04-09 13:27:48,384 [WARNING]  * Debugger is active!
+2025-04-09 13:27:48,392 [INFO]  * Debugger PIN: 136-885-017
+2025-04-09 13:27:52,848 [INFO] 127.0.0.1 - - [09/Apr/2025 13:27:52] "GET /apidoc/swagger/ HTTP/1.1" 200 -
+2025-04-09 13:28:00,684 [INFO] 127.0.0.1 - - [09/Apr/2025 13:28:00] "GET /apidoc/openapi.json HTTP/1.1" 200 -
+2025-04-09 13:28:20,034 [INFO] BEGIN (implicit)
+2025-04-09 13:28:20,035 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-09 13:28:20,035 [INFO] [generated in 0.00125s] ('0bf903f52fb24666bccccbc620879488', 'string', 1.0, None)
+2025-04-09 13:28:20,039 [INFO] COMMIT
+2025-04-09 13:28:20,067 [INFO] 127.0.0.1 - - [09/Apr/2025 13:28:20] "[35m[1mPOST /api/users/entries HTTP/1.1[0m" 201 -
+2025-04-09 13:28:37,064 [INFO] BEGIN (implicit)
+2025-04-09 13:28:37,065 [INFO] DELETE FROM profile WHERE profile.id = ?
+2025-04-09 13:28:37,065 [INFO] [generated in 0.00087s] ('0bf903f52fb24666bccccbc620879488',)
+2025-04-09 13:28:37,067 [INFO] COMMIT
+2025-04-09 13:28:37,089 [INFO] 127.0.0.1 - - [09/Apr/2025 13:28:37] "[35m[1mDELETE /api/users/entries/0bf903f52fb24666bccccbc620879488 HTTP/1.1[0m" 204 -
+2025-04-09 13:28:56,748 [INFO] BEGIN (implicit)
+2025-04-09 13:28:56,749 [INFO] UPDATE profile SET name=?, amount=?, category=? WHERE profile.id = ?
+2025-04-09 13:28:56,749 [INFO] [generated in 0.00079s] ('string', 1.0, None, 'cafb75b8dde64d5f93b0289c5f366726')
+2025-04-09 13:28:56,751 [INFO] COMMIT
+2025-04-09 13:28:56,762 [INFO] 127.0.0.1 - - [09/Apr/2025 13:28:56] "PUT /api/users/entries/cafb75b8dde64d5f93b0289c5f366726 HTTP/1.1" 200 -
+2025-04-09 13:30:02,145 [INFO] BEGIN (implicit)
+2025-04-09 13:30:02,145 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-09 13:30:02,145 [INFO] [generated in 0.00107s] ()
+2025-04-09 13:30:02,147 [INFO] ROLLBACK
+2025-04-09 13:30:02,150 [INFO] 127.0.0.1 - - [09/Apr/2025 13:30:02] "GET /api/users/export HTTP/1.1" 200 -
+2025-04-09 13:30:52,608 [INFO] 127.0.0.1 - - [09/Apr/2025 13:30:52] "[31m[1mPOST /api/users/import HTTP/1.1[0m" 400 -

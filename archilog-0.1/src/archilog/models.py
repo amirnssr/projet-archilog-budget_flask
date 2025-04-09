@@ -17,12 +17,10 @@ profile_table = Table(
     Column("amount", Float),
     Column("category", String, nullable=True),
 )
+engine = create_engine(config.DATABASE_URL, echo=True)
 
-# Global engine for reuse
-engine = create_engine(config.DATABASE_URL, echo=config.DEBUG)
-
-# Function to create tables in the database
 def init_db():
+    # Initialisation de la base de données avec le moteur configuré
     metadata.create_all(engine)
 
 @dataclass
@@ -49,6 +47,8 @@ def create_entry(name: str, amount: float, category: str) -> None:
         conn.execute(stmt)
         conn.commit()
     return new_entry
+
+
 def get_entry(id: uuid.UUID) -> Entry:
     with engine.connect() as conn:
         result = conn.execute(profile_table.select().where(profile_table.c.id == id.hex)).fetchone()

@@ -8,7 +8,7 @@ from wtforms import StringField, FloatField, SubmitField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
 from archilog.views.web_ui import EntryForm, UpdateForm, DeleteForm, ImportCSVForm
 
-
+"""
 app = Flask(__name__)
 
 # Initialisation de la base de donnees
@@ -132,7 +132,7 @@ def import_csv():
 
     return render_template("import_csv.html", message=message, form=form)
 
-
+"""
 
 
 @click.group()
