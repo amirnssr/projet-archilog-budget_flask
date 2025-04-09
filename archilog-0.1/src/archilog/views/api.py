@@ -6,6 +6,7 @@ from spectree import SpecTree, SecurityScheme
 import archilog.models as models
 import archilog.services as services
 import io, csv
+from spectree import BaseFile
 
 # Création du Blueprint pour l'API
 api_views = Blueprint("api_views", __name__, url_prefix="/api/users")
@@ -48,6 +49,7 @@ class EntryModel(BaseModel):
 class EntryResponse(EntryModel):
     """Modèle de réponse pour renvoyer une entrée avec son ID."""
     id: str
+
 
 #
 # Routes CRUD
@@ -173,28 +175,29 @@ def export_csv():
     
     
 
-# Endpoint pour importer le fichier CSV
-@api_views.route('/import', methods=['POST'])
-@spec.validate(tags=["import-export"])
-@token_auth.login_required
-def import_csv():
-    """Importer des données depuis un fichier CSV"""
-    if 'file' not in request.files:
-        return jsonify({"error": "Aucun fichier téléchargé."}), 400
-    
-    file = request.files['file']
-    
-    if file.filename == '' or not file.filename.endswith('.csv'):
-        return jsonify({"error": "Le fichier doit être un CSV."}), 400
-    
-    try:
-        # Lire le fichier et l'envoyer à la fonction d'import
-        stream = io.BytesIO(file.read())  # Convertir le fichier en flux
-        services.import_from_csv(stream)  # Fonction d'importation dans services.py
-        return jsonify({"message": "Importation réussie."}), 200
 
+# Modèle de validation pour l'importation de fichier CSV
+class CSVFileUpload(BaseModel):
+    file: BaseFile  # Remplace BaseFile() par str car c'est plus adapté pour l'upload de fichiers
+
+# Route pour importer un fichier CSV
+@api_views.route("/import_csv", methods=["POST"])
+@spec.validate(form=CSVFileUpload, tags=["csv"])
+def import_csv_api():
+    try:
+        # Récupération du fichier via request.files
+        file = request.files.get("file")
+
+        if not file:
+            return jsonify({"error": "Fichier manquant"}), 400
+
+        # Traitement du fichier CSV
+        services.import_from_csv(file.stream)
+        return jsonify({"message": "Import réussi"}), 200
     except Exception as e:
-        return jsonify({"error": f"Erreur lors de l'importation : {str(e)}"}), 500
-    
+        return jsonify({"error": "Erreur lors de l'import"}), 500
+
+
+
 def register_spec(app):
     spec.register(app)
