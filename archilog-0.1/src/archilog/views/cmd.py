@@ -1,12 +1,6 @@
 import uuid
 import click
-from flask import Flask, Response, render_template, request, redirect, url_for
 import archilog.models as models
-import archilog.services as services
-from flask_wtf import FlaskForm
-from wtforms import StringField, FloatField, SubmitField
-from wtforms.validators import DataRequired, Length, NumberRange, Optional
-from archilog.views.web_ui import EntryForm, UpdateForm, DeleteForm, ImportCSVForm
 
 
 @click.group()

@@ -4,12 +4,10 @@ from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import generate_password_hash, check_password_hash
 import archilog.models as models
 import archilog.services as services
-from archilog.models import Entry
 from archilog.services import import_from_csv
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField, FileField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
-from wtforms import FileField, SubmitField
 from flask_wtf.file import FileRequired, FileAllowed
 
 # Configuration de l'authentification HTTP

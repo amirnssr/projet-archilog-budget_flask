@@ -1,9 +1,8 @@
 from flask import Flask
 from archilog.views.web_ui import web_ui_bp, register_error_handlers
-from archilog.models import init_db
 from archilog.__init__ import config  
 from archilog.views.api import register_spec, api_views
-from archilog.views.cmd import cli
+
 def create_app():
     # Création de l'instance de l'application Flask
     app = Flask(__name__)
@@ -12,9 +11,7 @@ def create_app():
     # 🔹 Enregistrer les handlers d'erreur
     register_error_handlers(app)  
     register_spec(app)
-    # Initialisation de la base de données
-    init_db()
-
+   
     # Enregistrement des blueprints
     app.register_blueprint(web_ui_bp)
      # Enregistrer le blueprint de l'API

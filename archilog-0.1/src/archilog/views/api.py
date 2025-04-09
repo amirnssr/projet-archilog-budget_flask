@@ -1,11 +1,10 @@
 import uuid
-from flask import Blueprint, jsonify, request, abort
+from flask import Blueprint, jsonify, request
 from flask_httpauth import HTTPTokenAuth
 from pydantic import BaseModel, Field
 from spectree import SpecTree, SecurityScheme
 import archilog.models as models
 import archilog.services as services
-import io, csv
 from spectree import BaseFile
 
 # Création du Blueprint pour l'API
