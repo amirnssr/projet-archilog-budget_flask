@@ -1,14 +1,24 @@
 import uuid
-from flask import Blueprint, render_template, request, redirect, url_for, Response, flash
+
+from flask import (
+    Blueprint,
+    Response,
+    flash,
+    redirect,
+    render_template,
+    request,
+    url_for,
+)
 from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
+from flask_wtf import FlaskForm
+from flask_wtf.file import FileAllowed, FileRequired
+from werkzeug.security import check_password_hash, generate_password_hash
+from wtforms import FileField, FloatField, StringField, SubmitField
+from wtforms.validators import DataRequired, Length, NumberRange, Optional
+
 import archilog.models as models
 import archilog.services as services
 from archilog.services import import_from_csv
-from flask_wtf import FlaskForm
-from wtforms import StringField, FloatField, SubmitField, FileField
-from wtforms.validators import DataRequired, Length, NumberRange, Optional
-from flask_wtf.file import FileRequired, FileAllowed
 
 # Configuration de l'authentification HTTP
 auth = HTTPBasicAuth()

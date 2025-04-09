@@ -24,7 +24,7 @@ $ python -m pdm add flask flask-httpauth pydantic spectree
 $ python -m pdm add flask-jwt-extended
 http://127.0.0.1:5000/apidoc/swagger/
 
-se mettre ici /c/archi/archilogtp/archilog-0.1 (main)
+$ se mettre ici pour la bd et pour faire le pdm build :  /c/archi/archilogtp/archilog-0.1 (main)
 
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...

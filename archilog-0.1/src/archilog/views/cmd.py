@@ -1,5 +1,7 @@
 import uuid
+
 import click
+
 import archilog.models as models
 
 

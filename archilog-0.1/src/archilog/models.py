@@ -1,8 +1,19 @@
 import uuid
 from dataclasses import dataclass
-from archilog import config
-from sqlalchemy import create_engine, Column, String, Float, MetaData, Table, insert, update, delete
 
+from sqlalchemy import (
+    Column,
+    Float,
+    MetaData,
+    String,
+    Table,
+    create_engine,
+    delete,
+    insert,
+    update,
+)
+
+from archilog import config
 
 # Initialize global metadata
 metadata = MetaData()

@@ -1,7 +1,8 @@
+import logging
 import os
 from dataclasses import dataclass
+
 from dotenv import load_dotenv
-import logging
 
 # Charger les variables d'environnement
 load_dotenv()

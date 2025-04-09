@@ -1,11 +1,12 @@
 import uuid
+
 from flask import Blueprint, jsonify, request
 from flask_httpauth import HTTPTokenAuth
 from pydantic import BaseModel, Field
-from spectree import SpecTree, SecurityScheme
+from spectree import BaseFile, SecurityScheme, SpecTree
+
 import archilog.models as models
 import archilog.services as services
-from spectree import BaseFile
 
 # Création du Blueprint pour l'API
 api_views = Blueprint("api_views", __name__, url_prefix="/api/users")

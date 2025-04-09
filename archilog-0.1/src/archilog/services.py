@@ -1,8 +1,8 @@
 import csv
 import io
-from archilog.models import Entry 
-from archilog.models import create_entry
-from archilog.models import get_all_entries
+
+from archilog.models import Entry, create_entry, get_all_entries
+
 
 def import_from_csv(csv_file: io.BytesIO) -> None:
     """Importer des entrées depuis un fichier CSV"""
