@@ -6,7 +6,7 @@ import archilog.services as services
 from flask_wtf import FlaskForm
 from wtforms import StringField, FloatField, SubmitField
 from wtforms.validators import DataRequired, Length, NumberRange, Optional
-from web_ui import EntryForm, UpdateForm, DeleteForm, ImportCSVForm
+from archilog.views.web_ui import EntryForm, UpdateForm, DeleteForm, ImportCSVForm
 
 
 app = Flask(__name__)
@@ -133,9 +133,6 @@ def import_csv():
     return render_template("import_csv.html", message=message, form=form)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 
 
 @click.group()
@@ -222,7 +219,3 @@ def import_csv_cli(csv_file):
     except Exception as e:
         click.echo(f"Erreur lors de l'importation : {str(e)}")
 
-
-if __name__ == "__main__":
-    cli()
- 

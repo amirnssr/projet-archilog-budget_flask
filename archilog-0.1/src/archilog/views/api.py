@@ -172,46 +172,29 @@ def export_csv():
     }
     
     
-    
-    
+
+# Endpoint pour importer le fichier CSV
 @api_views.route('/import', methods=['POST'])
 @spec.validate(tags=["import-export"])
 @token_auth.login_required
 def import_csv():
-    """Importer des données depuis un fichier CSV (admin et user)."""
-    current_user = token_auth.current_user()  # Vérifie le rôle de l'utilisateur
-
-    if current_user != "admin":
-        return jsonify({"error": "Accès refusé. Vous devez être admin."}), 403
-
-    # Vérifier si le fichier est bien dans la requête
+    """Importer des données depuis un fichier CSV"""
     if 'file' not in request.files:
         return jsonify({"error": "Aucun fichier téléchargé."}), 400
     
     file = request.files['file']
     
-    # Vérifier si le fichier est valide (CSV)
     if file.filename == '' or not file.filename.endswith('.csv'):
         return jsonify({"error": "Le fichier doit être un CSV."}), 400
-
+    
     try:
-        # Lire le contenu du fichier CSV
-        stream = io.StringIO(file.stream.read().decode("UTF-8"), newline=None)
-        csv_reader = csv.DictReader(stream)
+        # Lire le fichier et l'envoyer à la fonction d'import
+        stream = io.BytesIO(file.read())  # Convertir le fichier en flux
+        services.import_from_csv(stream)  # Fonction d'importation dans services.py
+        return jsonify({"message": "Importation réussie."}), 200
 
-        # Parcourir chaque ligne du CSV et insérer les données dans la base de données
-        for row in csv_reader:
-            name = row.get('name')
-            amount = row.get('amount')
-            category = row.get('category', '')  # Catégorie optionnelle
-
-            # Créer une entrée dans la base de données
-            if name and amount:
-                models.create_entry(name, float(amount), category)
-
-        return jsonify({"message": "Fichier CSV importé avec succès."}), 200
     except Exception as e:
-        return jsonify({"error": f"Erreur lors de l'importation du CSV: {str(e)}"}), 500
-
+        return jsonify({"error": f"Erreur lors de l'importation : {str(e)}"}), 500
+    
 def register_spec(app):
     spec.register(app)

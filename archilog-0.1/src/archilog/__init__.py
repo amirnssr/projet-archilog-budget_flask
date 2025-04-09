@@ -12,7 +12,7 @@ class Config:
     SECRET_KEY: str 
 
 config = Config(
-    DATABASE_URL=os.getenv("ARCHILOG_DATABASE_URL", 'sqlite:////data.db'),
+    DATABASE_URL=os.getenv("ARCHILOG_DATABASE_URL", 'sqlite:///data.db'),
     DEBUG=os.getenv("ARCHILOG_DEBUG", "False") == "True",
     SECRET_KEY=os.getenv("SECRET_KEY", "dev-secret-key")  
 )
