@@ -27,6 +27,15 @@ http://127.0.0.1:5000/apidoc/swagger/
 $ se mettre ici pour la bd et pour faire le pdm build :  /c/archi/archilogtp/archilog-0.1 (main)
 
 
+``` cmd
+$ python -m pdm run archilog init-db
+$ python -m pdm run archilog create --name "Alice" --amount 200 --category "Finance"
+$ python -m pdm run archilog delete --id <entry_id>
+$ python -m pdm run archilog update --id <entry_id> --name "Bob" --amount 300 --category "Marketing"
+$ python -m pdm run archilog export-csv 
+$ python -m pdm run archilog import-csv "path_to_csv_file"
+
+
 Usage: archilog [OPTIONS] COMMAND [ARGS]...
 
 Options:

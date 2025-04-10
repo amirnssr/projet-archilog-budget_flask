@@ -1,17 +1,24 @@
+import io
 import uuid
 
 import click
 
 import archilog.models as models
+from archilog.services import import_from_csv
 
 
 @click.group()
 def cli():
     pass
 
+
+
+
 @cli.command()
 def init_db():
     models.init_db()
+
+
 
 @cli.command()
 @click.option("-n", "--name", prompt="Nom :", required=True)
@@ -20,6 +27,8 @@ def init_db():
 def create(name: str, amount: float, category: str):
     models.create_entry(name, amount, category)
     click.echo(f"Entree creee : {name}, {amount}, {category}")
+
+
 
 @cli.command(name="delete")
 @click.option("--id", "entry_id", required=True, type=str, help="ID de l'utilisateur a supprimer")
@@ -32,6 +41,8 @@ def delete_cli(entry_id: str):
         click.echo(f"Erreur : L'ID fourni ({entry_id}) n'est pas un UUID valide.")
     except Exception as e:
         click.echo(f"Erreur lors de la suppression : {str(e)}")
+
+
 
 @cli.command(name="update")
 @click.option("--id", "entry_id", required=True, type=str, help="ID de l'utilisateur a mettre a jour")
@@ -58,6 +69,8 @@ def update_cli(entry_id: str, name: str, amount: float, category: str):
     except Exception as e:
         click.echo(f"Erreur lors de la mise a jour : {str(e)}")
         
+        
+        
 @cli.command(name="export-csv")
 @click.option("--output", type=click.Path(), default="exported_data.csv", help="Nom du fichier CSV a generer")
 def export_csv_cli(output):
@@ -67,25 +80,23 @@ def export_csv_cli(output):
     import archilog.services as services  # Ajout de l'import dans la fonction
 
     try:
-        csv_output = services.export_to_csv()
+        csv_output = services.export_to_csv()  # Récupère les données CSV en mémoire
         with open(output, "w", encoding="utf-8") as f:
-            f.write(csv_output.getvalue())
+            f.write(csv_output.getvalue())  # Écrit uniquement dans le fichier
         click.echo(f"Donnees exportees dans '{output}'")
     except Exception as e:
         click.echo(f"Erreur lors de l'exportation CSV : {str(e)}")
 
 
 @cli.command(name="import-csv")
-@click.argument("csv_file", type=click.File("r"))
+@click.argument("csv_file", type=click.File("rb"))  # Mode binaire
 def import_csv_cli(csv_file):
     """
-    Commande CLI pour importer des entrees depuis un fichier CSV.
+    Commande CLI pour importer des entrées depuis un fichier CSV.
     """
-    import archilog.services as services  # Ajout de l'import dans la fonction
-
     try:
-        services.import_from_csv(csv_file)
-        click.echo("Importation du fichier CSV reussie")
+        # Lire le contenu du fichier en mode binaire et passer le flux à la fonction import_from_csv
+        import_from_csv(io.BytesIO(csv_file.read()))  # Utilisation du mode binaire
+        click.echo("Importation du fichier CSV réussie")
     except Exception as e:
         click.echo(f"Erreur lors de l'importation : {str(e)}")
-

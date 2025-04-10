@@ -7,6 +7,7 @@ from archilog.models import Entry, create_entry, get_all_entries
 def import_from_csv(csv_file: io.BytesIO) -> None:
     """Importer des entrées depuis un fichier CSV"""
     try:
+        # Convertir le fichier binaire en texte pour pouvoir le lire avec DictReader
         csv_reader = csv.DictReader(io.TextIOWrapper(csv_file, encoding='utf-8'))
         
         for row in csv_reader:
@@ -24,7 +25,9 @@ def import_from_csv(csv_file: io.BytesIO) -> None:
                 print(f"Erreur : Ligne invalide dans le CSV {row}")
     except Exception as e:
         print(f"Erreur lors de l'importation du CSV : {str(e)}")
-
+        
+        
+      
 def export_to_csv() -> io.StringIO:
     output = io.StringIO()
     # Exclure l'ID des champs à exporter
@@ -32,7 +35,8 @@ def export_to_csv() -> io.StringIO:
         output, fieldnames=["name", "amount", "category"]
     )
     csv_writer.writeheader()
-    
+
+    # Récupérer toutes les entrées de la base de données
     entries = get_all_entries()
     for entry in entries:
         if isinstance(entry, Entry):
@@ -44,7 +48,5 @@ def export_to_csv() -> io.StringIO:
             }
             csv_writer.writerow(entry_dict)
     
-    with open('entries.csv', 'w', newline='', encoding='utf-8') as file:
-        file.write(output.getvalue())
-    
+    # Retourne le contenu CSV sous forme de string (en mémoire)
     return output
