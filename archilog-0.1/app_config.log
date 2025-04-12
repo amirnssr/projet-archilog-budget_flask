@@ -103,3 +103,678 @@ CREATE TABLE profile (
 
 2025-04-10 20:03:47,663 [INFO] [no key 0.00025s] ()
 2025-04-10 20:03:47,688 [INFO] COMMIT
+2025-04-10 20:08:23,605 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 20:08:23,606 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 20:08:23,606 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 20:08:23,610 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 20:08:23,610 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 20:08:23,610 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 20:08:24,552 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-10 20:08:24,552 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-10 20:08:33,910 [INFO] BEGIN (implicit)
+2025-04-10 20:08:33,911 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 20:08:33,911 [INFO] [generated in 0.00079s] ('5cb249c024b64e9e842408d818fd2a58', 'jnj', 77.0, '')
+2025-04-10 20:08:33,912 [INFO] ROLLBACK
+2025-04-10 20:08:33,912 [ERROR] Exception on /add_entry [POST]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: profile
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 69, in add_entry
+    models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\models.py", line 57, in create_entry
+    conn.execute(stmt)
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: profile
+[SQL: INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)]
+[parameters: ('5cb249c024b64e9e842408d818fd2a58', 'jnj', 77.0, '')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-10 20:08:33,925 [INFO] 127.0.0.1 - - [10/Apr/2025 20:08:33] "[35m[1mPOST /add_entry HTTP/1.1[0m" 500 -
+2025-04-10 21:31:01,858 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:31:01,859 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:31:01,860 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:31:03,128 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:31:03,128 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:31:03,128 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:32:32,470 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:32:32,470 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:32:32,471 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:32:32,476 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:32:32,476 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:32:32,476 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:32:34,265 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-10 21:32:34,265 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-10 21:32:41,557 [INFO] BEGIN (implicit)
+2025-04-10 21:32:41,557 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:32:41,557 [INFO] [generated in 0.00074s] ('74bb82b2461a4416b3fcf47392f975a4', 'jnj', 77.0, '')
+2025-04-10 21:32:41,560 [INFO] ROLLBACK
+2025-04-10 21:32:41,560 [ERROR] Exception on /add_entry [POST]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: profile
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 69, in add_entry
+    models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\models.py", line 57, in create_entry
+    conn.execute(stmt)
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: profile
+[SQL: INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)]
+[parameters: ('74bb82b2461a4416b3fcf47392f975a4', 'jnj', 77.0, '')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-10 21:32:41,872 [INFO] 127.0.0.1 - - [10/Apr/2025 21:32:41] "[35m[1mPOST /add_entry HTTP/1.1[0m" 500 -
+2025-04-10 21:32:44,491 [INFO] 127.0.0.1 - - [10/Apr/2025 21:32:44] "GET / HTTP/1.1" 200 -
+2025-04-10 21:32:45,643 [INFO] 127.0.0.1 - - [10/Apr/2025 21:32:45] "GET /add_entry HTTP/1.1" 200 -
+2025-04-10 21:32:51,788 [INFO] BEGIN (implicit)
+2025-04-10 21:32:51,788 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:32:51,788 [INFO] [cached since 10.23s ago] ('223f9e365e8f4049b9a76e3b9a9f4d29', 'edddd', 7.0, '')
+2025-04-10 21:32:51,788 [INFO] ROLLBACK
+2025-04-10 21:32:51,789 [ERROR] Exception on /add_entry [POST]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: profile
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 69, in add_entry
+    models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\models.py", line 57, in create_entry
+    conn.execute(stmt)
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: profile
+[SQL: INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)]
+[parameters: ('223f9e365e8f4049b9a76e3b9a9f4d29', 'edddd', 7.0, '')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-10 21:32:51,791 [INFO] 127.0.0.1 - - [10/Apr/2025 21:32:51] "[35m[1mPOST /add_entry HTTP/1.1[0m" 500 -
+2025-04-10 21:33:13,181 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:33:13,181 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:33:13,181 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:33:13,447 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:33:13,447 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:33:13,447 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:33:14,203 [INFO] BEGIN (implicit)
+2025-04-10 21:33:14,203 [INFO] PRAGMA main.table_info("profile")
+2025-04-10 21:33:14,203 [INFO] [raw sql] ()
+2025-04-10 21:33:14,204 [INFO] PRAGMA temp.table_info("profile")
+2025-04-10 21:33:14,204 [INFO] [raw sql] ()
+2025-04-10 21:33:14,205 [INFO] 
+CREATE TABLE profile (
+	id VARCHAR NOT NULL, 
+	name VARCHAR, 
+	amount FLOAT, 
+	category VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2025-04-10 21:33:14,205 [INFO] [no key 0.00021s] ()
+2025-04-10 21:33:14,212 [INFO] COMMIT
+2025-04-10 21:33:19,314 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:33:19,314 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:33:19,314 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:33:19,316 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:33:19,317 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:33:19,317 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:33:19,928 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-10 21:33:19,928 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-10 21:33:24,251 [INFO] BEGIN (implicit)
+2025-04-10 21:33:24,251 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:33:24,251 [INFO] [generated in 0.00035s] ('a43669ec413c46d9bd133779f5c632b1', 'edddd', 7.0, '')
+2025-04-10 21:33:24,252 [INFO] COMMIT
+2025-04-10 21:33:24,259 [INFO] 127.0.0.1 - - [10/Apr/2025 21:33:24] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-04-10 21:33:24,402 [INFO] 127.0.0.1 - - [10/Apr/2025 21:33:24] "GET / HTTP/1.1" 200 -
+2025-04-10 21:33:27,916 [INFO] 127.0.0.1 - - [10/Apr/2025 21:33:27] "[33mGET /fdcx HTTP/1.1[0m" 404 -
+2025-04-10 21:33:30,468 [INFO] 127.0.0.1 - - [10/Apr/2025 21:33:30] "GET / HTTP/1.1" 200 -
+2025-04-10 21:35:58,541 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:35:58,542 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:35:58,542 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:35:58,837 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:35:58,837 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:35:58,837 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:05,262 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:05,262 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:05,262 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:05,500 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:05,500 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:05,500 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:06,365 [INFO] BEGIN (implicit)
+2025-04-10 21:37:06,365 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:37:06,365 [INFO] [generated in 0.00042s] ('dcc70b646c8e4a1a8858e89a50795546', 'Alice', 200.0, None)
+2025-04-10 21:37:06,368 [INFO] COMMIT
+2025-04-10 21:37:24,122 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:24,123 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:24,123 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:24,327 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:24,328 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:24,328 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:45,150 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:45,150 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:45,150 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:45,328 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:37:45,328 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:37:45,328 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:37:45,903 [INFO] BEGIN (implicit)
+2025-04-10 21:37:45,903 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:37:45,903 [INFO] [generated in 0.00041s] ('ed5799f7c9bc475fb564efe3b9215be2', 'Alice', 200.0, 'cateeeee')
+2025-04-10 21:37:45,905 [INFO] COMMIT
+2025-04-10 21:38:00,625 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:38:00,625 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:38:00,625 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:38:00,627 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-10 21:38:00,628 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-10 21:38:00,628 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-10 21:38:01,230 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-10 21:38:01,230 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-10 21:38:05,916 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:05] "GET / HTTP/1.1" 200 -
+2025-04-10 21:38:07,013 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:07] "GET /add_entry HTTP/1.1" 200 -
+2025-04-10 21:38:11,944 [INFO] BEGIN (implicit)
+2025-04-10 21:38:11,945 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-10 21:38:11,945 [INFO] [generated in 0.00047s] ('adc8cc43d40d4a62a21c7cc7840cc6b8', 'dddd', 9999.0, '')
+2025-04-10 21:38:11,947 [INFO] COMMIT
+2025-04-10 21:38:11,953 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:11] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-04-10 21:38:12,109 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:12] "GET / HTTP/1.1" 200 -
+2025-04-10 21:38:13,682 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:13] "GET /add_entry HTTP/1.1" 200 -
+2025-04-10 21:38:18,660 [INFO] 127.0.0.1 - - [10/Apr/2025 21:38:18] "POST /add_entry HTTP/1.1" 200 -
+2025-04-13 00:19:42,620 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:19:42,620 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:19:42,621 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:19:42,641 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:19:42,641 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:19:42,642 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:19:47,456 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:19:47,457 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:20:05,077 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:05] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:20:16,445 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:16] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:20:24,691 [ERROR] Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 55, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\templates\index.html", line 191, in top-level template code
+    <li><a href="{{ url_for('web_ui.get_all_categories') }}">Voir les catégories</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'web_ui.get_all_categories'. Did you mean 'web_ui.get_all_entries' instead?
+2025-04-13 00:20:24,774 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:24] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-13 00:20:24,888 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 00:20:46,350 [ERROR] Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 55, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\templates\index.html", line 191, in top-level template code
+    <li><a href="{{ url_for('web_ui.get_all_categories') }}">Voir les catégories</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'web_ui.get_all_categories'. Did you mean 'web_ui.get_all_entries' instead?
+2025-04-13 00:20:46,355 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:46] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-13 00:20:51,069 [ERROR] Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask_httpauth.py", line 174, in decorated
+    return self.ensure_sync(f)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\views\web_ui.py", line 55, in index
+    return render_template("index.html")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\archi\archilogtp\archilog-0.1\src\archilog\templates\index.html", line 191, in top-level template code
+    <li><a href="{{ url_for('web_ui.get_all_categories') }}">Voir les catégories</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1121, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\flask\app.py", line 1110, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\archi\archilogtp\archilog-0.1\.venv\Lib\site-packages\werkzeug\routing\map.py", line 924, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'web_ui.get_all_categories'. Did you mean 'web_ui.get_all_entries' instead?
+2025-04-13 00:20:51,073 [INFO] 127.0.0.1 - - [13/Apr/2025 00:20:51] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-04-13 00:21:12,284 [INFO] 127.0.0.1 - - [13/Apr/2025 00:21:12] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:21:12,540 [INFO] 127.0.0.1 - - [13/Apr/2025 00:21:12] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:21:23,335 [INFO] 127.0.0.1 - - [13/Apr/2025 00:21:23] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:21:23,554 [INFO] 127.0.0.1 - - [13/Apr/2025 00:21:23] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:21:59,789 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:21:59,789 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:21:59,790 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:21:59,793 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:21:59,793 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:21:59,793 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:22:00,786 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:22:00,786 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:22:03,754 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:03] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:22:04,003 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:04] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:22:13,584 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:13] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:22:13,826 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:13] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:22:34,874 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:34] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:22:35,100 [INFO] 127.0.0.1 - - [13/Apr/2025 00:22:35] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:23:54,532 [INFO] 127.0.0.1 - - [13/Apr/2025 00:23:54] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:23:54,769 [INFO] 127.0.0.1 - - [13/Apr/2025 00:23:54] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:23:56,018 [INFO] 127.0.0.1 - - [13/Apr/2025 00:23:56] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:23:56,572 [INFO] 127.0.0.1 - - [13/Apr/2025 00:23:56] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:23:56,645 [INFO] 127.0.0.1 - - [13/Apr/2025 00:23:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-04-13 00:24:07,964 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:07] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:08,193 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:08] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:17,494 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:17] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:17,720 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:17] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:24,378 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:24] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:24,616 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:24] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:35,508 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:35] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:35,731 [INFO] 127.0.0.1 - - [13/Apr/2025 00:24:35] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:24:50,584 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:24:50,584 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:24:50,584 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:24:50,587 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:24:50,588 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:24:50,588 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:24:51,565 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:24:51,565 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:25:00,743 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:00] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:25:10,121 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:10] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:13,235 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:13] "GET /entries HTTP/1.1" 200 -
+2025-04-13 00:25:17,352 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:17] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:19,146 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:19] "[32mGET /entries/some_id HTTP/1.1[0m" 302 -
+2025-04-13 00:25:19,397 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:19] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:21,159 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:21] "[32mGET /entries/some_id HTTP/1.1[0m" 302 -
+2025-04-13 00:25:21,387 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:21] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:22,148 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:22] "[32mGET /entries/some_id HTTP/1.1[0m" 302 -
+2025-04-13 00:25:22,411 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:22] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:23,047 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:23] "GET /entries HTTP/1.1" 200 -
+2025-04-13 00:25:36,638 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:36] "[32mPOST /entries HTTP/1.1[0m" 302 -
+2025-04-13 00:25:36,932 [INFO] BEGIN (implicit)
+2025-04-13 00:25:36,933 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile 
+WHERE profile.id = ?
+2025-04-13 00:25:36,933 [INFO] [generated in 0.00075s] ('adc8cc43d40d4a62a21c7cc7840cc6b8',)
+2025-04-13 00:25:36,938 [INFO] ROLLBACK
+2025-04-13 00:25:36,974 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:36] "GET /entries/adc8cc43d40d4a62a21c7cc7840cc6b8 HTTP/1.1" 200 -
+2025-04-13 00:25:39,721 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:39] "GET /entries HTTP/1.1" 200 -
+2025-04-13 00:25:41,797 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:41] "GET / HTTP/1.1" 200 -
+2025-04-13 00:25:48,236 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:48] "[32mGET /entries/some_id HTTP/1.1[0m" 302 -
+2025-04-13 00:25:48,495 [INFO] 127.0.0.1 - - [13/Apr/2025 00:25:48] "GET / HTTP/1.1" 200 -
+2025-04-13 00:30:06,121 [INFO] 127.0.0.1 - - [13/Apr/2025 00:30:06] "[32mGET /entries/some_id HTTP/1.1[0m" 302 -
+2025-04-13 00:30:06,359 [INFO] 127.0.0.1 - - [13/Apr/2025 00:30:06] "GET / HTTP/1.1" 200 -
+2025-04-13 00:40:58,099 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:40:58,100 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:40:58,100 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:40:58,105 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:40:58,105 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:40:58,106 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:40:59,301 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:40:59,302 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:41:04,039 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:04] "GET / HTTP/1.1" 200 -
+2025-04-13 00:41:07,084 [INFO] BEGIN (implicit)
+2025-04-13 00:41:07,084 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:41:07,084 [INFO] [generated in 0.00091s] ()
+2025-04-13 00:41:07,086 [INFO] ROLLBACK
+2025-04-13 00:41:07,137 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:07] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:41:07,369 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:07] "GET / HTTP/1.1" 200 -
+2025-04-13 00:41:09,374 [INFO] BEGIN (implicit)
+2025-04-13 00:41:09,375 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:41:09,375 [INFO] [cached since 2.291s ago] ()
+2025-04-13 00:41:09,375 [INFO] ROLLBACK
+2025-04-13 00:41:09,379 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:09] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:41:09,617 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:09] "GET / HTTP/1.1" 200 -
+2025-04-13 00:41:10,682 [INFO] BEGIN (implicit)
+2025-04-13 00:41:10,683 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:41:10,683 [INFO] [cached since 3.599s ago] ()
+2025-04-13 00:41:10,684 [INFO] ROLLBACK
+2025-04-13 00:41:10,687 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:10] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:41:10,935 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:10] "GET / HTTP/1.1" 200 -
+2025-04-13 00:41:12,429 [INFO] 127.0.0.1 - - [13/Apr/2025 00:41:12] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:20,246 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:45:20,246 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:45:20,246 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:45:20,250 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:45:20,250 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:45:20,250 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:45:21,231 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:45:21,231 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:45:25,122 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:25] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:25,991 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:25] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:26,579 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:26] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:35,547 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:35] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:38,734 [INFO] BEGIN (implicit)
+2025-04-13 00:45:38,734 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile 
+WHERE profile.id = ?
+2025-04-13 00:45:38,734 [INFO] [generated in 0.00080s] ('ed5799f7c9bc475fb564efe3b9215be2',)
+2025-04-13 00:45:38,750 [INFO] ROLLBACK
+2025-04-13 00:45:38,751 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:38] "POST /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:45:42,014 [INFO] BEGIN (implicit)
+2025-04-13 00:45:42,015 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:45:42,015 [INFO] [generated in 0.00124s] ()
+2025-04-13 00:45:42,017 [INFO] ROLLBACK
+2025-04-13 00:45:42,028 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:42] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:45:42,263 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:42] "GET / HTTP/1.1" 200 -
+2025-04-13 00:45:44,719 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:44] "GET / HTTP/1.1" 200 -
+2025-04-13 00:45:48,230 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:48] "GET /update HTTP/1.1" 200 -
+2025-04-13 00:45:50,136 [INFO] 127.0.0.1 - - [13/Apr/2025 00:45:50] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:48:24,873 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:48:24,873 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:48:24,873 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:48:24,877 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:48:24,877 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:48:24,877 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:48:25,833 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:48:25,834 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:48:30,156 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:30] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 00:48:32,099 [INFO] BEGIN (implicit)
+2025-04-13 00:48:32,100 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:48:32,100 [INFO] [generated in 0.00064s] ()
+2025-04-13 00:48:32,101 [INFO] ROLLBACK
+2025-04-13 00:48:32,111 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:32] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:48:32,348 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:32] "GET / HTTP/1.1" 200 -
+2025-04-13 00:48:36,725 [INFO] BEGIN (implicit)
+2025-04-13 00:48:36,726 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:48:36,726 [INFO] [cached since 4.626s ago] ()
+2025-04-13 00:48:36,727 [INFO] ROLLBACK
+2025-04-13 00:48:36,730 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:36] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:48:37,010 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:37] "GET / HTTP/1.1" 200 -
+2025-04-13 00:48:39,358 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:39] "GET / HTTP/1.1" 200 -
+2025-04-13 00:48:41,548 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:41] "GET /add_entry HTTP/1.1" 200 -
+2025-04-13 00:48:45,190 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:45] "GET /delete HTTP/1.1" 200 -
+2025-04-13 00:48:46,647 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:46] "GET /update HTTP/1.1" 200 -
+2025-04-13 00:48:50,016 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:50] "GET /import_csv HTTP/1.1" 200 -
+2025-04-13 00:48:51,693 [INFO] BEGIN (implicit)
+2025-04-13 00:48:51,694 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:48:51,694 [INFO] [cached since 19.59s ago] ()
+2025-04-13 00:48:51,695 [INFO] ROLLBACK
+2025-04-13 00:48:51,700 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:51] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:48:51,951 [INFO] 127.0.0.1 - - [13/Apr/2025 00:48:51] "GET / HTTP/1.1" 200 -
+2025-04-13 00:49:20,398 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:20] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 00:49:28,594 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:28] "GET / HTTP/1.1" 200 -
+2025-04-13 00:49:30,790 [INFO] BEGIN (implicit)
+2025-04-13 00:49:30,790 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:49:30,790 [INFO] [cached since 58.69s ago] ()
+2025-04-13 00:49:30,791 [INFO] ROLLBACK
+2025-04-13 00:49:30,794 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:30] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:49:31,037 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:31] "GET / HTTP/1.1" 200 -
+2025-04-13 00:49:33,185 [INFO] BEGIN (implicit)
+2025-04-13 00:49:33,185 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:49:33,186 [INFO] [cached since 61.09s ago] ()
+2025-04-13 00:49:33,186 [INFO] ROLLBACK
+2025-04-13 00:49:33,189 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:33] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:49:33,431 [INFO] 127.0.0.1 - - [13/Apr/2025 00:49:33] "GET / HTTP/1.1" 200 -
+2025-04-13 00:53:18,581 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:53:18,582 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:53:18,582 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:53:18,585 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 00:53:18,586 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 00:53:18,586 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 00:53:19,594 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 00:53:19,594 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 00:53:23,756 [INFO] 127.0.0.1 - - [13/Apr/2025 00:53:23] "GET / HTTP/1.1" 200 -
+2025-04-13 00:53:26,473 [INFO] BEGIN (implicit)
+2025-04-13 00:53:26,474 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 00:53:26,474 [INFO] [generated in 0.00067s] ()
+2025-04-13 00:53:26,475 [INFO] ROLLBACK
+2025-04-13 00:53:26,486 [INFO] 127.0.0.1 - - [13/Apr/2025 00:53:26] "[32mGET /all_entries HTTP/1.1[0m" 302 -
+2025-04-13 00:53:26,715 [INFO] 127.0.0.1 - - [13/Apr/2025 00:53:26] "GET / HTTP/1.1" 200 -
+2025-04-13 01:00:59,116 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:00:59,116 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:00:59,117 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:00:59,401 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:00:59,402 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:00:59,402 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:01:09,560 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:01:09,560 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:01:09,560 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:01:09,834 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:01:09,834 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:01:09,835 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:01:50,030 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:01:50,030 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:01:50,030 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:01:50,301 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:01:50,301 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:01:50,301 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:01:51,227 [INFO] BEGIN (implicit)
+2025-04-13 01:01:51,227 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 01:01:51,228 [INFO] [generated in 0.00050s] ()
+2025-04-13 01:01:51,228 [INFO] ROLLBACK
+2025-04-13 01:05:06,244 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:05:06,244 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:05:06,244 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:05:06,247 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 01:05:06,248 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 01:05:06,248 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 01:05:07,192 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 01:05:07,193 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 01:05:11,090 [INFO] 127.0.0.1 - - [13/Apr/2025 01:05:11] "GET / HTTP/1.1" 200 -
+2025-04-13 01:05:12,656 [INFO] BEGIN (implicit)
+2025-04-13 01:05:12,657 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 01:05:12,657 [INFO] [generated in 0.00062s] ()
+2025-04-13 01:05:12,658 [INFO] ROLLBACK
+2025-04-13 01:05:12,710 [INFO] 127.0.0.1 - - [13/Apr/2025 01:05:12] "GET /all_entries HTTP/1.1" 200 -
+2025-04-13 01:05:15,519 [INFO] 127.0.0.1 - - [13/Apr/2025 01:05:15] "GET / HTTP/1.1" 200 -

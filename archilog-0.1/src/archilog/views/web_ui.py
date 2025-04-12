@@ -55,6 +55,33 @@ def index():
     return render_template("index.html")
 
 
+
+@web_ui_bp.route("/all_entries", methods=["GET"])
+@auth.login_required(role="admin")  # Assurez-vous que l'utilisateur est un admin
+def all_entries():
+    try:
+        entries = models.get_all_entries()  # Appel de la fonction pour récupérer toutes les entrées
+        return render_template("all_entries.html", entries=entries)  # Passer les entrées au template
+    except Exception as e:
+        flash(f"Erreur lors de la récupération des entrées : {str(e)}", "danger")
+        return redirect(url_for('web_ui.index'))  # Rediriger en cas d'erreur
+
+
+@web_ui_bp.route("/entry_specifique", methods=["GET", "POST"])
+@auth.login_required(role="admin")
+def entry_specifique():
+    form = EntrySearchForm()
+
+    entry = None
+    if form.validate_on_submit():
+        entry_id = form.entry_id.data
+        try:
+            entry = models.get_entry(uuid.UUID(entry_id))  # Récupérer l'entrée par ID
+        except Exception as e:
+            flash(f"Erreur lors de la récupération de l'entrée : {str(e)}", "danger")
+
+    return render_template("entry_specifique.html", form=form, entry=entry)
+
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
 @auth.login_required(role="admin")  # Cette route est réservée aux admins
 def add_entry():
@@ -153,6 +180,13 @@ def export_csv():
     except Exception as e:
         return f"Erreur lors de l'exportation : {str(e)}", 500
 
+
+
+
+
+class EntrySearchForm(FlaskForm):
+    entry_id = StringField('ID de l\'Entrée', validators=[DataRequired(), Length(min=0, max=36)])  # UUID length
+    submit = SubmitField('Rechercher')
 
 
 

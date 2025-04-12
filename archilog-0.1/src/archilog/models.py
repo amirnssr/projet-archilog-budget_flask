@@ -44,7 +44,8 @@ class Entry:
     def from_db(cls, id: str, name: str, amount: float, category: str):
         # Ensure to convert id back to UUID
         return cls(uuid.UUID(id), name, amount, category)
-
+    
+    
 def create_entry(name: str, amount: float, category: str) -> None:
     new_entry = {
         "id": uuid.uuid4().hex,
@@ -57,6 +58,7 @@ def create_entry(name: str, amount: float, category: str) -> None:
         conn.execute(stmt)
         conn.commit()
     return new_entry
+
 
 
 def get_entry(id: uuid.UUID) -> Entry:

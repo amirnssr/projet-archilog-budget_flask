@@ -8,7 +8,6 @@ from spectree import BaseFile, SecurityScheme, SpecTree
 import archilog.models as models
 import archilog.services as services
 
-
 api_views = Blueprint("api_views", __name__, url_prefix="/api/users")
 
 

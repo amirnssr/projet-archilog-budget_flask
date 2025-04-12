@@ -17,16 +17,38 @@ def cli():
 @cli.command()
 def init_db():
     models.init_db()
+    
+    
+    
 
+@cli.command(name="get-entries")
+def get_entries_cli():
+    """Commande CLI pour récupérer toutes les entrées."""
+    try:
+        entries = models.get_all_entries()
+        for entry in entries:
+            click.echo(f"ID: {entry.id}, Name: {entry.name}, Amount: {entry.amount}, Category: {entry.category}")
+    except Exception as e:
+        click.echo(f"Erreur lors de la récupération des entrées : {str(e)}")
 
+@cli.command(name="get-entry")
+@click.option("--id", "entry_id", required=True, help="ID de l'entrée à récupérer")
+def get_entry_cli(entry_id: str):
+    """Commande CLI pour récupérer une entrée par ID."""
+    try:
+        entry = models.get_entry(uuid.UUID(entry_id))
+        click.echo(f"ID: {entry.id}, Name: {entry.name}, Amount: {entry.amount}, Category: {entry.category}")
+    except Exception as e:
+        click.echo(f"Erreur lors de la récupération de l'entrée : {str(e)}")
 
 @cli.command()
 @click.option("-n", "--name", prompt="Nom :", required=True)
 @click.option("-a", "--amount", type=float, prompt="Montant :", required=True)
-@click.option("-c", "--category", prompt="Categorie :", required=True)
-def create(name: str, amount: float, category: str):
+@click.option("-c", "--category", default=None, help="Catégorie de l'entrée (optionnelle)")
+def create(name: str, amount: float, category: str | None):
+    """Créer une nouvelle entrée avec une catégorie optionnelle."""
     models.create_entry(name, amount, category)
-    click.echo(f"Entree creee : {name}, {amount}, {category}")
+    click.echo(f"Entrée créée : {name}, {amount}, {category or 'Aucune catégorie'}")
 
 
 
