@@ -27,11 +27,17 @@ profile_table = Table(
     Column("amount", Float),
     Column("category", String, nullable=True),
 )
+
+
 engine = create_engine(config.DATABASE_URL, echo=True)
+
+
 
 def init_db():
     # Initialisation de la base de données avec le moteur configuré
     metadata.create_all(engine)
+
+
 
 @dataclass
 class Entry:
@@ -44,6 +50,8 @@ class Entry:
     def from_db(cls, id: str, name: str, amount: float, category: str):
         # Ensure to convert id back to UUID
         return cls(uuid.UUID(id), name, amount, category)
+    
+    
     
     
 def create_entry(name: str, amount: float, category: str) -> None:
@@ -69,10 +77,15 @@ def get_entry(id: uuid.UUID) -> Entry:
         else:
             raise Exception("Entry not found")
 
+
+
 def get_all_entries() -> list[Entry]:
     with engine.connect() as conn:
         results = conn.execute(profile_table.select()).fetchall()
         return [Entry.from_db(*r) for r in results]
+
+
+
 
 def update_entry(id: uuid.UUID, name: str, amount: float, category: str | None) -> None:
     stmt = (
@@ -83,6 +96,9 @@ def update_entry(id: uuid.UUID, name: str, amount: float, category: str | None) 
     with engine.connect() as conn:
         conn.execute(stmt)
         conn.commit()
+        
+        
+        
 
 def delete_entry(id: uuid.UUID) -> None:
     stmt = delete(profile_table).where(profile_table.c.id == id.hex)

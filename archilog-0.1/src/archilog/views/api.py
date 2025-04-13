@@ -48,12 +48,17 @@ class EntryModel(BaseModel):
     name: str = Field(min_length=2, max_length=100, description="Nom de l'entrée")
     amount: float = Field(gt=0, description="Montant de l'entrée")
     category: str | None = Field(default=None, description="Catégorie optionnelle")
+    
 
 class EntryResponse(EntryModel):
     """Modèle de réponse pour renvoyer une entrée avec son ID."""
     id: str
 
 
+class CSVFileUpload(BaseModel):
+    file: BaseFile 
+    
+    
 
 @api_views.route('/entries', methods=['GET'])
 @spec.validate(tags=["entries"])
@@ -183,8 +188,6 @@ def export_csv():
     
 
 
-class CSVFileUpload(BaseModel):
-    file: BaseFile 
 
 # Route pour importer un fichier CSV
 @api_views.route("/import_csv", methods=["POST"])

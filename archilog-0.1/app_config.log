@@ -1,0 +1,96 @@
+2025-04-13 15:13:30,346 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:30,347 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:30,347 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:30,352 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:30,352 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:30,352 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:31,570 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:13:31,571 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 15:13:47,710 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:47,710 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:47,710 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:47,991 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:47,992 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:47,992 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:48,935 [INFO] BEGIN (implicit)
+2025-04-13 15:13:48,936 [INFO] PRAGMA main.table_info("profile")
+2025-04-13 15:13:48,936 [INFO] [raw sql] ()
+2025-04-13 15:13:48,941 [INFO] PRAGMA temp.table_info("profile")
+2025-04-13 15:13:48,941 [INFO] [raw sql] ()
+2025-04-13 15:13:48,942 [INFO] 
+CREATE TABLE profile (
+	id VARCHAR NOT NULL, 
+	name VARCHAR, 
+	amount FLOAT, 
+	category VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+2025-04-13 15:13:48,942 [INFO] [no key 0.00026s] ()
+2025-04-13 15:13:48,950 [INFO] COMMIT
+2025-04-13 15:13:55,634 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:55,635 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:55,635 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:55,639 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:13:55,639 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:13:55,639 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:13:56,658 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:13:56,658 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 15:14:00,566 [INFO] 127.0.0.1 - - [13/Apr/2025 15:14:00] "GET / HTTP/1.1" 200 -
+2025-04-13 15:14:01,546 [INFO] 127.0.0.1 - - [13/Apr/2025 15:14:01] "[31m[1mGET /update HTTP/1.1[0m" 403 -
+2025-04-13 15:14:28,473 [INFO] 127.0.0.1 - - [13/Apr/2025 15:14:28] "[31m[1mGET / HTTP/1.1[0m" 401 -
+2025-04-13 15:14:35,944 [INFO] 127.0.0.1 - - [13/Apr/2025 15:14:35] "GET / HTTP/1.1" 200 -
+2025-04-13 15:14:37,172 [INFO] 127.0.0.1 - - [13/Apr/2025 15:14:37] "GET /update HTTP/1.1" 200 -
+2025-04-13 15:15:39,168 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:15:39,168 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:15:39,168 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:15:39,171 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:15:39,172 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:15:39,172 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:15:40,185 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:15:40,185 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 15:15:47,749 [INFO] 127.0.0.1 - - [13/Apr/2025 15:15:47] "GET /update HTTP/1.1" 200 -
+2025-04-13 15:15:49,701 [INFO] 127.0.0.1 - - [13/Apr/2025 15:15:49] "GET /import_csv HTTP/1.1" 200 -
+2025-04-13 15:18:03,461 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:18:03,461 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:18:03,461 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:18:03,464 [DEBUG] Chargement de la configuration - DATABASE_URL: sqlite:///data.db, DEBUG: True
+2025-04-13 15:18:03,465 [DEBUG] Valeur de DEBUG après conversion : False
+2025-04-13 15:18:03,465 [INFO] Configuration chargée : Config(DATABASE_URL='sqlite:///data.db', DEBUG=True, SECRET_KEY='une_super_cle_secrete')
+2025-04-13 15:18:04,573 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-04-13 15:18:04,573 [INFO] [33mPress CTRL+C to quit[0m
+2025-04-13 15:18:10,801 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:10] "GET /import_csv HTTP/1.1" 200 -
+2025-04-13 15:18:12,424 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:12] "GET / HTTP/1.1" 200 -
+2025-04-13 15:18:14,759 [INFO] BEGIN (implicit)
+2025-04-13 15:18:14,759 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 15:18:14,759 [INFO] [generated in 0.00065s] ()
+2025-04-13 15:18:14,763 [INFO] ROLLBACK
+2025-04-13 15:18:14,787 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:14] "GET /all_entries HTTP/1.1" 200 -
+2025-04-13 15:18:21,170 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:21] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 15:18:23,859 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:23] "GET /add_entry HTTP/1.1" 200 -
+2025-04-13 15:18:30,731 [INFO] BEGIN (implicit)
+2025-04-13 15:18:30,731 [INFO] INSERT INTO profile (id, name, amount, category) VALUES (?, ?, ?, ?)
+2025-04-13 15:18:30,732 [INFO] [generated in 0.00075s] ('d26b0c2ccb454a59b1517067a5f99c63', 'zidj', 5.0, 'hidvjxk')
+2025-04-13 15:18:30,735 [INFO] COMMIT
+2025-04-13 15:18:30,743 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:30] "[32mPOST /add_entry HTTP/1.1[0m" 302 -
+2025-04-13 15:18:30,995 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:30] "GET / HTTP/1.1" 200 -
+2025-04-13 15:18:32,664 [INFO] BEGIN (implicit)
+2025-04-13 15:18:32,665 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile
+2025-04-13 15:18:32,665 [INFO] [cached since 17.91s ago] ()
+2025-04-13 15:18:32,667 [INFO] ROLLBACK
+2025-04-13 15:18:32,668 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:32] "GET /all_entries HTTP/1.1" 200 -
+2025-04-13 15:18:38,116 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:38] "GET /entry_specifique HTTP/1.1" 200 -
+2025-04-13 15:18:41,053 [INFO] BEGIN (implicit)
+2025-04-13 15:18:41,053 [INFO] SELECT profile.id, profile.name, profile.amount, profile.category 
+FROM profile 
+WHERE profile.id = ?
+2025-04-13 15:18:41,054 [INFO] [generated in 0.00109s] ('d26b0c2ccb454a59b1517067a5f99c63',)
+2025-04-13 15:18:41,055 [INFO] ROLLBACK
+2025-04-13 15:18:41,056 [INFO] 127.0.0.1 - - [13/Apr/2025 15:18:41] "POST /entry_specifique HTTP/1.1" 200 -

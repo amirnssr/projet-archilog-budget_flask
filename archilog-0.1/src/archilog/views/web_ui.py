@@ -23,11 +23,16 @@ from archilog.services import import_from_csv
 # Configuration de l'authentification HTTP
 auth = HTTPBasicAuth()
 
+
+
+
 # Utilisateurs et mots de passe hachés
 users = {
     "admin": generate_password_hash("adminpassword"),  # Admin
     "user": generate_password_hash("userpassword")     # Utilisateur normal
 }
+
+
 
 # Rôles des utilisateurs
 roles = {
@@ -35,19 +40,30 @@ roles = {
     "user": "user"     # Utilisateur normal a un accès limité
 }
 
+
+
+
 # Vérification du mot de passe
 @auth.verify_password
 def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
         return username
 
+
+
+
 # Récupération des rôles pour chaque utilisateur
 @auth.get_user_roles
 def get_user_roles(username):
     return roles.get(username, "user")  # Par défaut, le rôle est "user" si non spécifié
 
+
+
 # Initialisation du Blueprint
 web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
+
+
+
 
 @web_ui_bp.route("/")
 @auth.login_required
@@ -67,6 +83,8 @@ def all_entries():
         return redirect(url_for('web_ui.index'))  # Rediriger en cas d'erreur
 
 
+
+
 @web_ui_bp.route("/entry_specifique", methods=["GET", "POST"])
 @auth.login_required(role="admin")
 def entry_specifique():
@@ -81,6 +99,10 @@ def entry_specifique():
             flash(f"Erreur lors de la récupération de l'entrée : {str(e)}", "danger")
 
     return render_template("entry_specifique.html", form=form, entry=entry)
+
+
+
+
 
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
 @auth.login_required(role="admin")  # Cette route est réservée aux admins
@@ -102,6 +124,9 @@ def add_entry():
     return render_template("home.html", form=form)
 
 
+
+
+
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
 @auth.login_required(role="admin")  # Cette route est réservée aux admins
 def delete():
@@ -116,6 +141,9 @@ def delete():
         return redirect(url_for("web_ui.index"))
 
     return render_template("delete.html", form=form)
+
+
+
 
 
 @web_ui_bp.route("/update", methods=["GET", "POST"])
@@ -143,6 +171,10 @@ def update():
     return render_template("update.html", form=form)
 
 
+
+
+
+
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
 @auth.login_required(role="admin")  # Cette route est réservée aux admins
 def import_csv():
@@ -165,6 +197,10 @@ def import_csv():
                 flash(f"Erreur lors de l'importation : {str(e)}", "danger")
 
     return render_template("import_csv.html", form=form)
+
+
+
+
 
 
 @web_ui_bp.route("/export_csv")
@@ -199,12 +235,16 @@ class EntryForm(FlaskForm):
     category = StringField("Catégorie (optionnel)", validators=[Optional(), Length(max=50)])
     submit = SubmitField("Ajouter")
 
+
+
 class DeleteForm(FlaskForm):
     class Meta:
         csrf = False 
 
     entry_id = StringField("ID de l'entrée", validators=[DataRequired()])
     submit = SubmitField("Supprimer")
+
+
 
 class UpdateForm(FlaskForm):
     class Meta:
@@ -216,9 +256,13 @@ class UpdateForm(FlaskForm):
     category = StringField("Nouvelle Catégorie (optionnel)", validators=[Optional(), Length(max=50)])
     submit = SubmitField("Mettre à jour")
 
+
+
 class ImportCSVForm(FlaskForm):
     file = FileField('Import CSV', validators=[FileRequired(), FileAllowed(['csv'], 'CSV files only!')])
     submit = SubmitField('Importer')
+    
+    
     
     
 def register_error_handlers(app):

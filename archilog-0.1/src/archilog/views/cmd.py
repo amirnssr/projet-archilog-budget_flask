@@ -30,6 +30,9 @@ def get_entries_cli():
             click.echo(f"ID: {entry.id}, Name: {entry.name}, Amount: {entry.amount}, Category: {entry.category}")
     except Exception as e:
         click.echo(f"Erreur lors de la récupération des entrées : {str(e)}")
+        
+        
+        
 
 @cli.command(name="get-entry")
 @click.option("--id", "entry_id", required=True, help="ID de l'entrée à récupérer")
@@ -40,6 +43,10 @@ def get_entry_cli(entry_id: str):
         click.echo(f"ID: {entry.id}, Name: {entry.name}, Amount: {entry.amount}, Category: {entry.category}")
     except Exception as e:
         click.echo(f"Erreur lors de la récupération de l'entrée : {str(e)}")
+        
+        
+        
+        
 
 @cli.command()
 @click.option("-n", "--name", prompt="Nom :", required=True)
@@ -93,6 +100,8 @@ def update_cli(entry_id: str, name: str, amount: float, category: str):
         
         
         
+        
+        
 @cli.command(name="export-csv")
 @click.option("--output", type=click.Path(), default="exported_data.csv", help="Nom du fichier CSV a generer")
 def export_csv_cli(output):
@@ -108,6 +117,8 @@ def export_csv_cli(output):
         click.echo(f"Donnees exportees dans '{output}'")
     except Exception as e:
         click.echo(f"Erreur lors de l'exportation CSV : {str(e)}")
+
+
 
 
 @cli.command(name="import-csv")

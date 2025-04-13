@@ -27,6 +27,8 @@ def import_from_csv(csv_file: io.BytesIO) -> None:
         print(f"Erreur lors de l'importation du CSV : {str(e)}")
         
         
+        
+        
       
 def export_to_csv() -> io.StringIO:
     output = io.StringIO()
