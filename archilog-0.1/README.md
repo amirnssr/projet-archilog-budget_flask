@@ -34,6 +34,8 @@ $ python -m pdm run archilog delete --id <entry_id>
 $ python -m pdm run archilog update --id <entry_id> --name "Bob" --amount 300 --category "Marketing"
 $ python -m pdm run archilog export-csv 
 $ python -m pdm run archilog import-csv "path_to_csv_file"
+$ python -m pdm run archilog get-entry --id "9df32d4f27eb4b95a971df582e85e1aa"
+$ python -m pdm run archilog get-entries
 
 
 Usage: archilog [OPTIONS] COMMAND [ARGS]...
