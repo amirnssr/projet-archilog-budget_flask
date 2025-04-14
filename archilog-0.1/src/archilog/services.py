@@ -5,9 +5,8 @@ from archilog.models import Entry, create_entry, get_all_entries
 
 
 def import_from_csv(csv_file: io.BytesIO) -> None:
-    """Importer des entrées depuis un fichier CSV"""
     try:
-        # Convertir le fichier binaire en texte pour pouvoir le lire avec DictReader
+       
         csv_reader = csv.DictReader(io.TextIOWrapper(csv_file, encoding='utf-8'))
         
         for row in csv_reader:
@@ -15,10 +14,10 @@ def import_from_csv(csv_file: io.BytesIO) -> None:
             amount = row.get("amount")
             category = row.get("category")
             
-            if name and amount:  # Assurez-vous que les valeurs sont valides
+            if name and amount: 
                 try:
-                    amount = float(amount)  # Convertir le montant en float
-                    create_entry(name, amount, category)  # Appeler la fonction pour insérer dans la base
+                    amount = float(amount)  
+                    create_entry(name, amount, category)  
                 except ValueError:
                     print(f"Erreur : Montant invalide pour {row}")
             else:
@@ -32,17 +31,14 @@ def import_from_csv(csv_file: io.BytesIO) -> None:
       
 def export_to_csv() -> io.StringIO:
     output = io.StringIO()
-    # Exclure l'ID des champs à exporter
     csv_writer = csv.DictWriter(
         output, fieldnames=["name", "amount", "category"]
     )
     csv_writer.writeheader()
 
-    # Récupérer toutes les entrées de la base de données
     entries = get_all_entries()
     for entry in entries:
         if isinstance(entry, Entry):
-            # Créer un dictionnaire sans l'ID
             entry_dict = {
                 "name": entry.name,
                 "amount": entry.amount,
@@ -50,5 +46,4 @@ def export_to_csv() -> io.StringIO:
             }
             csv_writer.writerow(entry_dict)
     
-    # Retourne le contenu CSV sous forme de string (en mémoire)
     return output

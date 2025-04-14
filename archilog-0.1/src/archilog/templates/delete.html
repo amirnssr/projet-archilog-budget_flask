@@ -7,7 +7,7 @@
 <h2>Supprimer une entrée</h2>
 
 <form method="POST">
-    {{ form.hidden_tag() }}  <!-- Protection CSRF -->
+    {{ form.hidden_tag() }}  
     
     <div>
         <label for="entry_id">{{ form.entry_id.label }}</label>
@@ -24,6 +24,5 @@
 
 <br>
 
-<!-- Bouton pour revenir à l'index -->
 <a href="{{ url_for('web_ui.index') }}">Retour à l'accueil</a>
 {% endblock %}

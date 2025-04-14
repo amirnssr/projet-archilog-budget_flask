@@ -36,7 +36,6 @@ valid_tokens = {
 
 @token_auth.verify_token
 def verify_token(token):
-    """Vérifie si le token fourni est valide."""
     if token in valid_tokens:
         return valid_tokens[token] 
     return None
@@ -44,14 +43,12 @@ def verify_token(token):
 
 
 class EntryModel(BaseModel):
-    """Modèle pour valider le contenu JSON des entrées."""
     name: str = Field(min_length=2, max_length=100, description="Nom de l'entrée")
     amount: float = Field(gt=0, description="Montant de l'entrée")
     category: str | None = Field(default=None, description="Catégorie optionnelle")
     
 
 class EntryResponse(EntryModel):
-    """Modèle de réponse pour renvoyer une entrée avec son ID."""
     id: str
 
 
@@ -64,7 +61,6 @@ class CSVFileUpload(BaseModel):
 @spec.validate(tags=["entries"])
 @token_auth.login_required
 def get_entries():
-    """Récupérer toutes les entrées."""
     current_user = token_auth.current_user()  
 
     if current_user != "admin":
@@ -108,13 +104,12 @@ def create_entry(json: EntryModel):
 @spec.validate(tags=["entries"])
 @token_auth.login_required
 def get_entry(id: str):
-    current_user = token_auth.current_user()  # Vérifie le rôle de l'utilisateur
+    current_user = token_auth.current_user()
 
     if current_user != "admin":
         return jsonify({"error": "Accès refusé. Vous devez être admin."}), 403
 
     try:
-        # Convertir l'ID sans tirets en un UUID valide
         uuid_id = uuid.UUID(id)
         entry = models.get_entry(uuid_id)
         if not entry:
@@ -134,13 +129,12 @@ def get_entry(id: str):
 @spec.validate(json=EntryModel, tags=["entries"])
 @token_auth.login_required
 def update_entry(id: str, json: EntryModel):
-    current_user = token_auth.current_user()  # Vérifie le rôle de l'utilisateur
+    current_user = token_auth.current_user()  
 
     if current_user != "admin":
         return jsonify({"error": "Accès refusé. Vous devez être admin."}), 403
 
     try:
-        # Convertir l'ID sans tirets en un UUID valide
         uuid_id = uuid.UUID(id)
         models.update_entry(uuid_id, json.name, json.amount, json.category)
         return jsonify({
@@ -159,13 +153,12 @@ def update_entry(id: str, json: EntryModel):
 @token_auth.login_required
 def delete_entry(id: str):
    
-    current_user = token_auth.current_user()  # Vérifie le rôle de l'utilisateur
+    current_user = token_auth.current_user()  
 
     if current_user != "admin":
         return jsonify({"error": "Accès refusé. Vous devez être admin."}), 403
 
     try:
-        # Convertir l'ID sans tirets en un UUID valide
         uuid_id = uuid.UUID(id)
         models.delete_entry(uuid_id)
         return jsonify({"message": "Entrée supprimée avec succès"}), 204
@@ -189,13 +182,12 @@ def export_csv():
 
 
 
-# Route pour importer un fichier CSV
 @api_views.route("/import_csv", methods=["POST"])
 @spec.validate(form=CSVFileUpload, tags=["import-export"])
 @token_auth.login_required
 def import_csv_api():
     
-    current_user = token_auth.current_user()  # Vérifie le rôle de l'utilisateur
+    current_user = token_auth.current_user()  
 
     if current_user != "admin":
         return jsonify({"error": "Accès refusé. Vous devez être admin."}), 403
@@ -207,10 +199,9 @@ def import_csv_api():
         if not file:
             return jsonify({"error": "Fichier manquant"}), 400
 
-        # Traitement du fichier CSV
         services.import_from_csv(file.stream)
         return jsonify({"message": "Import réussi"}), 200
-    except Exception as e:
+    except Exception:
         return jsonify({"error": "Erreur lors de l'import"}), 500
 
 

@@ -15,10 +15,8 @@ from sqlalchemy import (
 
 from archilog import config
 
-# Initialize global metadata
 metadata = MetaData()
 
-# Define the table
 profile_table = Table(
     "profile",
     metadata,
@@ -34,7 +32,6 @@ engine = create_engine(config.DATABASE_URL, echo=True)
 
 
 def init_db():
-    # Initialisation de la base de données avec le moteur configuré
     metadata.create_all(engine)
 
 
@@ -48,7 +45,7 @@ class Entry:
 
     @classmethod
     def from_db(cls, id: str, name: str, amount: float, category: str):
-        # Ensure to convert id back to UUID
+    
         return cls(uuid.UUID(id), name, amount, category)
     
     

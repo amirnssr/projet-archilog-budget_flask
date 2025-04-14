@@ -4,7 +4,6 @@ from dataclasses import dataclass
 
 from dotenv import load_dotenv
 
-# Charger les variables d'environnement
 load_dotenv()
 @dataclass
 class Config:
@@ -19,31 +18,25 @@ config = Config(
 )
 
 
-# Configurer le logging
 logging.basicConfig(
-    level=logging.DEBUG,  # Niveau de log global, tu peux le configurer à DEBUG ou INFO
+    level=logging.DEBUG,  
     format="%(asctime)s [%(levelname)s] %(message)s",
     handlers=[
-        logging.StreamHandler(),  # Afficher les logs dans la console
-        logging.FileHandler("app_config.log")  # Enregistrer les logs dans un fichier 'app_config.log'
+        logging.StreamHandler(),  
+        logging.FileHandler("app_config.log")  
     ]
 )
 
 
-# Log des variables d'environnement chargées
 logging.debug(f"Chargement de la configuration - DATABASE_URL: {config.DATABASE_URL}, DEBUG: {config.DEBUG}")
 
-# Convertir DEBUG en booléen
-DEBUG = config.DEBUG == 'True'  # Si ARCHILOG_DEBUG est 'True', alors DEBUG sera True, sinon False
+DEBUG = config.DEBUG == 'True' 
 
-# Log de la conversion du DEBUG
 logging.debug(f"Valeur de DEBUG après conversion : {DEBUG}")
 
 
 
-# Log de la configuration finale
 logging.info(f"Configuration chargée : {config}")
 
-# Optionnel : Log de la base de données si elle est vide
 if not config.DATABASE_URL:
     logging.warning("La variable d'environnement DATABASE_URL est vide ou manquante.")

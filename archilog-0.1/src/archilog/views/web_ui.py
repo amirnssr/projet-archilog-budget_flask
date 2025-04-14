@@ -1,3 +1,4 @@
+import io
 import uuid
 
 from flask import (
@@ -20,30 +21,26 @@ import archilog.models as models
 import archilog.services as services
 from archilog.services import import_from_csv
 
-# Configuration de l'authentification HTTP
 auth = HTTPBasicAuth()
 
 
 
 
-# Utilisateurs et mots de passe hachés
 users = {
-    "admin": generate_password_hash("adminpassword"),  # Admin
-    "user": generate_password_hash("userpassword")     # Utilisateur normal
+    "admin": generate_password_hash("adminpassword"),  
+    "user": generate_password_hash("userpassword")     
 }
 
 
 
-# Rôles des utilisateurs
 roles = {
-    "admin": "admin",  # Admin a accès à tout
-    "user": "user"     # Utilisateur normal a un accès limité
+    "admin": "admin",  
+    "user": "user"    
 }
 
 
 
 
-# Vérification du mot de passe
 @auth.verify_password
 def verify_password(username, password):
     if username in users and check_password_hash(users.get(username), password):
@@ -52,14 +49,11 @@ def verify_password(username, password):
 
 
 
-# Récupération des rôles pour chaque utilisateur
 @auth.get_user_roles
 def get_user_roles(username):
-    return roles.get(username, "user")  # Par défaut, le rôle est "user" si non spécifié
+    return roles.get(username, "user")  
 
 
-
-# Initialisation du Blueprint
 web_ui_bp = Blueprint("web_ui", __name__, url_prefix='/', template_folder="../templates")
 
 
@@ -73,14 +67,14 @@ def index():
 
 
 @web_ui_bp.route("/all_entries", methods=["GET"])
-@auth.login_required(role="admin")  # Assurez-vous que l'utilisateur est un admin
+@auth.login_required(role="admin")  
 def all_entries():
     try:
-        entries = models.get_all_entries()  # Appel de la fonction pour récupérer toutes les entrées
-        return render_template("all_entries.html", entries=entries)  # Passer les entrées au template
+        entries = models.get_all_entries()  
+        return render_template("all_entries.html", entries=entries)  
     except Exception as e:
         flash(f"Erreur lors de la récupération des entrées : {str(e)}", "danger")
-        return redirect(url_for('web_ui.index'))  # Rediriger en cas d'erreur
+        return redirect(url_for('web_ui.index')) 
 
 
 
@@ -94,7 +88,7 @@ def entry_specifique():
     if form.validate_on_submit():
         entry_id = form.entry_id.data
         try:
-            entry = models.get_entry(uuid.UUID(entry_id))  # Récupérer l'entrée par ID
+            entry = models.get_entry(uuid.UUID(entry_id)) 
         except Exception as e:
             flash(f"Erreur lors de la récupération de l'entrée : {str(e)}", "danger")
 
@@ -105,7 +99,7 @@ def entry_specifique():
 
 
 @web_ui_bp.route("/add_entry", methods=["GET", "POST"])
-@auth.login_required(role="admin")  # Cette route est réservée aux admins
+@auth.login_required(role="admin")  
 def add_entry():
     form = EntryForm()
 
@@ -115,7 +109,7 @@ def add_entry():
         category = form.category.data
 
         try:
-            models.create_entry(name, amount, category)  # Appel à la méthode add_entry du modèle
+            models.create_entry(name, amount, category)  
             flash("Entrée ajoutée avec succès !", "success")
             return redirect(url_for("web_ui.index"))
         except ValueError:
@@ -128,7 +122,7 @@ def add_entry():
 
 
 @web_ui_bp.route("/delete", methods=["GET", "POST"])
-@auth.login_required(role="admin")  # Cette route est réservée aux admins
+@auth.login_required(role="admin")  
 def delete():
     form = DeleteForm()
     if form.validate_on_submit():
@@ -147,7 +141,7 @@ def delete():
 
 
 @web_ui_bp.route("/update", methods=["GET", "POST"])
-@auth.login_required(role="admin")  # Cette route est réservée aux admins
+@auth.login_required(role="admin") 
 def update():
     form = UpdateForm()
     if form.validate_on_submit():
@@ -176,7 +170,7 @@ def update():
 
 
 @web_ui_bp.route("/import_csv", methods=["GET", "POST"])
-@auth.login_required(role="admin")  # Cette route est réservée aux admins
+@auth.login_required(role="admin")  
 def import_csv():
     form = ImportCSVForm()
 
@@ -187,8 +181,7 @@ def import_csv():
             flash("Erreur : Aucun fichier sélectionné", "danger")
         else:
             try:
-                import io
-                # Convertir le fichier téléchargé en un flux utilisable par la fonction import_from_csv
+    
                 stream = io.BytesIO(file.read())
                 import_from_csv(stream)
                 flash("Importation réussie", "success")
@@ -204,14 +197,14 @@ def import_csv():
 
 
 @web_ui_bp.route("/export_csv")
-@auth.login_required(role=["user", "admin"])  # Autoriser l'accès aux utilisateurs et aux admins
+@auth.login_required(role=["user", "admin"])  
 def export_csv():
     try:
-        csv_output = services.export_to_csv()  # Appelle la fonction d'exportation
+        csv_output = services.export_to_csv()  
         return Response(
-            csv_output.getvalue(),  # Retourne les données CSV
+            csv_output.getvalue(), 
             mimetype="text/csv",
-            headers={"Content-Disposition": "attachment; filename=exported_data.csv"}  # Force le téléchargement
+            headers={"Content-Disposition": "attachment; filename=exported_data.csv"}  
         )
     except Exception as e:
         return f"Erreur lors de l'exportation : {str(e)}", 500
@@ -221,7 +214,7 @@ def export_csv():
 
 
 class EntrySearchForm(FlaskForm):
-    entry_id = StringField('ID de l\'Entrée', validators=[DataRequired(), Length(min=0, max=36)])  # UUID length
+    entry_id = StringField('ID de l\'Entrée', validators=[DataRequired(), Length(min=0, max=36)])  
     submit = SubmitField('Rechercher')
 
 

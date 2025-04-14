@@ -4,6 +4,7 @@ import uuid
 import click
 
 import archilog.models as models
+import archilog.services as services
 from archilog.services import import_from_csv
 
 
@@ -23,7 +24,6 @@ def init_db():
 
 @cli.command(name="get-entries")
 def get_entries_cli():
-    """Commande CLI pour récupérer toutes les entrées."""
     try:
         entries = models.get_all_entries()
         for entry in entries:
@@ -37,7 +37,7 @@ def get_entries_cli():
 @cli.command(name="get-entry")
 @click.option("--id", "entry_id", required=True, help="ID de l'entrée à récupérer")
 def get_entry_cli(entry_id: str):
-    """Commande CLI pour récupérer une entrée par ID."""
+    
     try:
         entry = models.get_entry(uuid.UUID(entry_id))
         click.echo(f"ID: {entry.id}, Name: {entry.name}, Amount: {entry.amount}, Category: {entry.category}")
@@ -53,7 +53,6 @@ def get_entry_cli(entry_id: str):
 @click.option("-a", "--amount", type=float, prompt="Montant :", required=True)
 @click.option("-c", "--category", default=None, help="Catégorie de l'entrée (optionnelle)")
 def create(name: str, amount: float, category: str | None):
-    """Créer une nouvelle entrée avec une catégorie optionnelle."""
     models.create_entry(name, amount, category)
     click.echo(f"Entrée créée : {name}, {amount}, {category or 'Aucune catégorie'}")
 
@@ -105,15 +104,10 @@ def update_cli(entry_id: str, name: str, amount: float, category: str):
 @cli.command(name="export-csv")
 @click.option("--output", type=click.Path(), default="exported_data.csv", help="Nom du fichier CSV a generer")
 def export_csv_cli(output):
-    """
-    Commande CLI pour exporter les entrées de la base de donnees en CSV.
-    """
-    import archilog.services as services  # Ajout de l'import dans la fonction
-
     try:
-        csv_output = services.export_to_csv()  # Récupère les données CSV en mémoire
+        csv_output = services.export_to_csv() 
         with open(output, "w", encoding="utf-8") as f:
-            f.write(csv_output.getvalue())  # Écrit uniquement dans le fichier
+            f.write(csv_output.getvalue())  
         click.echo(f"Donnees exportees dans '{output}'")
     except Exception as e:
         click.echo(f"Erreur lors de l'exportation CSV : {str(e)}")
@@ -122,14 +116,11 @@ def export_csv_cli(output):
 
 
 @cli.command(name="import-csv")
-@click.argument("csv_file", type=click.File("rb"))  # Mode binaire
+@click.argument("csv_file", type=click.File("rb"))  
 def import_csv_cli(csv_file):
-    """
-    Commande CLI pour importer des entrées depuis un fichier CSV.
-    """
+    
     try:
-        # Lire le contenu du fichier en mode binaire et passer le flux à la fonction import_from_csv
-        import_from_csv(io.BytesIO(csv_file.read()))  # Utilisation du mode binaire
+        import_from_csv(io.BytesIO(csv_file.read()))  
         click.echo("Importation du fichier CSV réussie")
     except Exception as e:
         click.echo(f"Erreur lors de l'importation : {str(e)}")
