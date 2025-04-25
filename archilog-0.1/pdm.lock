@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:f3fbe1f4875e4418dae1266992dfa67f26da359cbed7a5fbe58f83231d63806d"
+content_hash = "sha256:b1d6c8645d4c7af50c281ca8d6b1b0c9285d3c0c188f36aa853576e5e0d8197f"
 
 [[metadata.targets]]
 requires_python = ">=3.10"
@@ -395,7 +395,7 @@ files = [
 
 [[package]]
 name = "spectree"
-version = "1.4.5"
+version = "1.4.6"
 requires_python = ">=3.9"
 summary = "Generate OpenAPI document and validate request & response with Python annotations."
 groups = ["default"]
@@ -403,8 +403,8 @@ dependencies = [
     "pydantic<3,>=1.2",
 ]
 files = [
-    {file = "spectree-1.4.5-py3-none-any.whl", hash = "sha256:7b8e13d8447a651e8593cb28781ddfc0afc3591260341f9cf4b4c587bd37843d"},
-    {file = "spectree-1.4.5.tar.gz", hash = "sha256:9e72585d960cd83ac75542df4d2a4674b4be6fc95fbb49cff1047bdcecf4e98f"},
+    {file = "spectree-1.4.6-py3-none-any.whl", hash = "sha256:ffe021f3194056a5a329c2b44e25d1122526358b921f5d98bbde5e5d3512a798"},
+    {file = "spectree-1.4.6.tar.gz", hash = "sha256:2c8f9d1dc703bbd3f9a5dd9b1edaa831e3d54b53fde8fceaa2ef5a1d3c6c522f"},
 ]
 
 [[package]]
